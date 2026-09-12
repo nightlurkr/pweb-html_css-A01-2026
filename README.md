@@ -24,19 +24,9 @@ Website portofolio interaktif dan **Creative CV** untuk mengenang serta mempelaj
 
 ##  Fitur Tambahan
 
-1. **Fitur Unik 1**:
+1. **Toggle Mode**:
    - Toggle di navbar untuk berpindah antara tema terang dan tema gelap.
    - Tersimpan otomatis di `localStorage` peramban.
-2. **Fitur Unik 2**:
-   - Modul interaktif di landing page untuk membandingkan mahakarya pesawat IPTN: **N-250 Gatotkaca** dan **CN-235 Nusantara**.
-   - Menampilkan spesifikasi teknis lengkap: kapasitas, kecepatan jelajah, jangkauan terbang, dan mesin.
-3. **Creative CV Siap Ekspor PDF**:
-   - Dilengkapi tombol *"Cetak / Simpan PDF CV"* dengan stylesheet `@media print` khusus yang otomatis merapikan tata letak menjadi dokumen CV profesional bebas elemen navigasi web.
-4. **Visual Skill Proficiency Meters**:
-   - Indikator persentase keahlian dinamis berbasis CSS untuk keahlian aeronautika, kepemimpinan publik, dan kemampuan multibahasa (Indonesia, Jerman, Inggris, Belanda).
-5. **Floating Back-to-Top**:
-   - Tombol mengambang di pojok kanan bawah (`position: fixed`) dengan transisi pudar dan luncur otomatis saat halaman digulir.
-
 ---
 
 ## Struktur Direktori
