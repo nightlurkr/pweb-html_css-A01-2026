@@ -20,6 +20,7 @@
                     <li><a href="cv.html" class="menu-cv" aria-current="page">CV</a></li>
                 </ul>
             </nav>
+            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Aktifkan mode gelap" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-text">Mode gelap</span></button>
         </div>
     </header>
 
@@ -38,8 +39,8 @@
             </p>
 
             <ul class="cv-kontak">
-                <li>[email@placeholder.com]</li>
-                <li>[Kota, Negara]</li>
+                <li>habibie@gmail.com]</li>
+                <li>Indonesia</li>
                 <li><a href="index.html">← kembali ke profil</a></li>
             </ul>
         </section>
@@ -184,13 +185,17 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="footer-isi">
-            <p>Praktikum Modul 1 &mdash; Pemrograman Web 2026 &middot; Kelompok A01</p>
-            <p>HTML &amp; CSS native, tanpa framework</p>
-        </div>
-    </footer>
-
+    <script>
+        (function () {
+            const root=document.documentElement, toggle=document.getElementById('theme-toggle');
+            if(!toggle) return;
+            const icon=toggle.querySelector('.theme-toggle-icon'), text=toggle.querySelector('.theme-toggle-text');
+            function setTheme(mode){ const dark=mode==='dark'; root.dataset.theme=dark?'dark':'light'; toggle.setAttribute('aria-pressed',dark?'true':'false'); toggle.setAttribute('aria-label',dark?'Aktifkan mode terang':'Aktifkan mode gelap'); icon.textContent=dark?'☀':'☾'; text.textContent=dark?'Mode terang':'Mode gelap'; }
+            const saved=localStorage.getItem('theme');
+            setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+            toggle.addEventListener('click',()=>{ const next=root.dataset.theme==='dark'?'light':'dark'; localStorage.setItem('theme',next); setTheme(next); });
+        })();
+    </script>
     <script>
         // Tab CV: klik tombol tab -> tampilkan panel terkait, sembunyikan lainnya.
         // Ditulis vanilla JS, tanpa library, sesuai batasan tugas.
