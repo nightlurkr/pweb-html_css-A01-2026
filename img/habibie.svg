@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" width="420" height="520" role="img" aria-label="Placeholder potret">
+  <rect width="420" height="520" fill="#e9edf2"/>
+  <circle cx="210" cy="200" r="78" fill="#59616c"/>
+  <path d="M210 296c-84 0-142 50-154 124h308c-12-74-70-124-154-124z" fill="#59616c"/>
+  <text x="210" y="478" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#59616c" letter-spacing="4">GANTI DENGAN FOTO</text>
+</svg>
