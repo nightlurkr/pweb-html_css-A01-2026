@@ -1,80 +1,29 @@
 :root {
-    --tinta:          #121926;
-    --tinta-lembut:   #253246;
-    --redup:          #4b5768;
-    --redup-terang:   #697586;
-    
-    --biru:           #1d58c8;   
-    --biru-muda:      #e8f0fe;
-    --biru-pucat:     rgba(29, 88, 200, 0.08);
-    --emas-aksen:     #b8860b;
-    --emas-pucat:     rgba(184, 134, 11, 0.12);
-    
-    --garis:          rgba(18, 25, 38, 0.12);
-    --garis-tegas:    rgba(29, 88, 200, 0.25);
-    
-    --kaca:           rgba(255, 255, 255, 0.65);
-    --kaca-pekat:     rgba(255, 255, 255, 0.82);
-    --kaca-tepi:      rgba(255, 255, 255, 0.75);
-    --kaca-blur:      blur(16px);
-    
-    --bayang:         0 12px 32px rgba(19, 62, 146, 0.10);
-    --bayang-dalam:   inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    --bayang-kartu:   0 8px 24px rgba(18, 25, 38, 0.06);
+    --tinta:      #151a22;
+    --redup:      #545e6e;
+    --biru:       #2050b3;   /* biru teknik / blueprint */
+    --biru-tua:   #173c88;
+    --biru-pucat: rgba(32, 80, 179, 0.08);
+    --garis:      rgba(21, 26, 34, 0.12);
 
-    --serif:          Georgia, "Times New Roman", serif;
-    --sans:           "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-    --mono:           SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-    
-    --lebar:          1080px;
-    --radius:         16px;
-    --radius-sm:      8px;
-    --jeda:           0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    /* resep kaca: putih tembus pandang + blur latar */
+    --kaca:       rgba(255, 255, 255, 0.55);
+    --kaca-pekat: rgba(255, 255, 255, 0.72);
+    --kaca-tepi:  rgba(255, 255, 255, 0.65);
 
-    --bg-dasar:       #eaf0f8;
-    --bg-gradien:     
-        radial-gradient(1000px 700px at 10% -5%, rgba(65, 125, 240, 0.22), transparent 60%),
-        radial-gradient(900px 650px at 92% 10%, rgba(135, 95, 240, 0.15), transparent 60%),
-        radial-gradient(1100px 800px at 50% 105%, rgba(45, 170, 225, 0.16), transparent 65%);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans:  "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+
+    --lebar:  1060px;
+    --radius: 16px;
+    --jeda:   0.22s ease;
+    --bayang: 0 10px 30px rgba(23, 60, 136, 0.10);
 }
 
-[data-theme="blueprint"] {
-    --tinta:          #e6edf8;
-    --tinta-lembut:   #c8d6ed;
-    --redup:          #94a7c6;
-    --redup-terang:   #7389aa;
-    
-    --biru:           #38bdf8;  
-    --biru-tua:       #0284c7;
-    --biru-muda:      #0b2344;
-    --biru-pucat:     rgba(56, 189, 248, 0.12);
-    --emas-aksen:     #fbbf24;
-    --emas-pucat:     rgba(251, 191, 36, 0.15);
-    
-    --garis:          rgba(56, 189, 248, 0.20);
-    --garis-tegas:    rgba(56, 189, 248, 0.45);
-    
-    --kaca:           rgba(10, 25, 47, 0.72);
-    --kaca-pekat:     rgba(13, 33, 62, 0.88);
-    --kaca-tepi:      rgba(56, 189, 248, 0.32);
-    --kaca-blur:      blur(18px);
-    
-    --bayang:         0 14px 40px rgba(0, 0, 0, 0.45);
-    --bayang-dalam:   inset 0 1px 0 rgba(56, 189, 248, 0.25);
-    --bayang-kartu:   0 8px 24px rgba(0, 0, 0, 0.35);
 
-    --bg-dasar:       #07111e;
-    --bg-gradien:
-        linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-        radial-gradient(1000px 700px at 15% -5%, rgba(14, 116, 144, 0.35), transparent 60%),
-        radial-gradient(900px 650px at 85% 15%, rgba(30, 58, 138, 0.40), transparent 60%),
-        radial-gradient(1100px 800px at 50% 105%, rgba(3, 105, 161, 0.30), transparent 65%);
-}
+/* ---------- 2. Dasar ---------- */
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -82,117 +31,101 @@ body {
     font-size: 16.5px;
     line-height: 1.7;
     color: var(--tinta);
-    background-color: var(--bg-dasar);
-    background-image: var(--bg-gradien);
-    background-size: auto, auto, auto, auto, auto;
+    /* latar berlapis: tiga cahaya biru di atas dasar dingin */
+    background-color: #e9eef6;
+    background-image:
+        radial-gradient(900px 600px at 8% -5%,  rgba(64, 118, 226, 0.20), transparent 60%),
+        radial-gradient(800px 550px at 95% 12%, rgba(120, 92, 228, 0.13), transparent 60%),
+        radial-gradient(900px 700px at 50% 105%, rgba(38, 154, 204, 0.14), transparent 65%);
     background-attachment: fixed;
-    background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
-    transition: background-color var(--jeda), color var(--jeda);
-    overflow-x: hidden;
+    background-repeat: no-repeat;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+img { max-width: 100%; display: block; }          /* [REQ: DISPLAY] block */
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: var(--serif);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-top: 0;
-    color: var(--tinta);
     text-wrap: balance;
 }
 
-p {
-    margin-top: 0;
-}
+a { color: var(--biru); text-decoration: none; }
 
-a {
+/* label kecil huruf kapital — dipakai berulang */
+.label {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--biru);
-    text-decoration: none;
-    transition: color var(--jeda);
 }
 
+/* [REQ: PSEUDO-CLASS] :focus-visible — penanda fokus keyboard */
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--biru);
     outline-offset: 3px;
 }
 
-.label {
-    margin: 0 0 14px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--biru);
-}
+
+/* ---------- 3. Navbar: bilah kaca melayang ---------- */
 
 .navbar {
-    position: sticky;                
+    position: sticky;                /* [REQ: POSITION] sticky — menempel saat digulir */
     top: 14px;
     z-index: 100;
     max-width: var(--lebar);
     margin: 14px auto 0;
     padding: 0 8px;
     background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    -webkit-backdrop-filter: var(--kaca-blur);
+    backdrop-filter: blur(14px);     /* efek kaca: buramkan apa pun di belakangnya */
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--kaca-tepi);
     border-radius: var(--radius);
     box-shadow: var(--bayang);
-    transition: background-color var(--jeda), border-color var(--jeda);
 }
 
 .navbar-isi {
-    padding: 12px 20px;
-    display: flex;                   
-    align-items: center;
+    padding: 14px 20px;
+    display: flex;                   /* [REQ: FLEX] nama kiri, menu kanan */
+    align-items: baseline;
     justify-content: space-between;
     gap: 16px;
 }
 
 .logo {
     font-family: var(--serif);
-    font-size: 1.12rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--tinta);
-    letter-spacing: 0.02em;
-    display: flex;                  
-    align-items: center;
-    gap: 4px;
-}
-
-.logo-aksen {
-    color: var(--biru);
 }
 
 .menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;                  
-    align-items: center;
-    gap: 24px;
+    display: flex;                   /* [REQ: FLEX] */
+    align-items: baseline;
+    gap: 26px;
 }
 
 .menu a {
-    position: relative;              
-    display: inline-block;           
+    position: relative;              /* [REQ: POSITION] induk garis bawah animasi */
+    display: inline-block;           /* [REQ: DISPLAY] inline-block */
     font-size: 0.94rem;
     font-weight: 500;
     color: var(--tinta);
-    padding: 4px 0;
 }
 
+/* garis bawah yang tumbuh saat hover */
 .menu a::after {
     content: "";
-    position: absolute;              
+    position: absolute;              /* [REQ: POSITION] absolute — relatif ke tautannya */
     left: 0;
-    bottom: 0;
+    bottom: -4px;
     width: 100%;
     height: 2px;
     background-color: var(--biru);
@@ -201,1076 +134,305 @@ button:focus-visible {
     transition: transform var(--jeda);
 }
 
-.menu a:hover::after {
-    transform: scaleX(1);          
-}
+/* [REQ: PSEUDO-CLASS] :hover */
+.menu a:hover::after { transform: scaleX(1); }
 
-.menu a[aria-current="page"] {
-    color: var(--biru);
-    font-weight: 700;
-}
+.menu-cv { color: var(--biru); font-weight: 600; }
 
-.menu a[aria-current="page"]::after {
-    transform: scaleX(1);
-}
 
-.menu-cv {
-    color: var(--biru) !important;
-    font-weight: 700 !important;
-}
-
-.tombol-tema {
-    background-color: var(--biru-pucat);
-    border: 1px solid var(--garis-tegas);
-    border-radius: 999px;
-    padding: 6px 14px;
-    display: inline-flex;            /* [REQ: DISPLAY] inline-flex */
-    align-items: center;
-    gap: 8px;
-    font-family: var(--sans);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--biru);
-    cursor: pointer;
-    transition: all var(--jeda);
-}
-
-.tombol-tema:hover {                 /* [REQ: PSEUDO-CLASS] :hover */
-    background-color: var(--biru);
-    color: #ffffff;
-    transform: translateY(-1px);
-}
-
-.tombol-tema.aktif {
-    background-color: var(--biru);
-    color: #07111e;
-    border-color: var(--biru);
-}
-
-/* ==========================================================
-   4. HERO SECTION (LANDING PAGE)
-   ========================================================== */
+/* ---------- 4. Hero ---------- */
 
 .hero {
     max-width: var(--lebar);
     margin: 0 auto;
-    padding: 72px 24px 64px;
-    display: grid;                   /* [REQ: GRID] grid hero 2 kolom */
-    grid-template-columns: 1.25fr 0.85fr;
+    padding: 84px 24px 64px;
+    display: grid;                   /* [REQ: GRID] teks | foto */
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
-    gap: 60px;
+    gap: 64px;
 }
 
 .hero h1 {
     margin: 0 0 20px;
-    font-size: 3.2rem;
-    letter-spacing: -0.02em;
+    font-size: 3.4rem;
+    letter-spacing: -0.01em;
 }
 
 .hero-pengantar {
-    margin: 0 0 28px;
+    margin: 0 0 32px;
     max-width: 52ch;
     font-size: 1.12rem;
     color: var(--redup);
-    line-height: 1.75;
 }
 
 .hero-tombol {
     display: flex;                   /* [REQ: FLEX] */
     flex-wrap: wrap;
     align-items: center;
-    gap: 22px;
-    margin-bottom: 24px;
+    gap: 26px;
 }
 
-.hero-kutipan-singkat {
-    font-size: 0.92rem;
-    color: var(--redup-terang);
-    border-left: 3px solid var(--biru);
-    padding-left: 14px;
-    font-style: italic;
-}
-
-/* Wadah Foto Hero */
 .hero-foto {
     margin: 0;
-    position: relative;              /* [REQ: POSITION] relative */
+    position: relative;              /* [REQ: POSITION] induk untuk bingkai offset */
 }
 
 .hero-foto img {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: top center;
     border-radius: var(--radius);
     border: 1px solid var(--kaca-tepi);
-    box-shadow: 0 20px 48px rgba(19, 62, 146, 0.22);
-    transition: transform var(--jeda);
+    box-shadow: 0 18px 44px rgba(23, 60, 136, 0.20);
 }
 
-/* [REQ: PSEUDO-CLASS] :hover pada foto hero */
-.hero-foto:hover img {
-    transform: scale(1.015);
-}
-
-/* Bingkai offset dekoratif di belakang foto */
+/* bingkai kaca tipis yang bergeser di belakang foto */
 .hero-foto::before {
     content: "";
     position: absolute;              /* [REQ: POSITION] absolute */
     top: 16px;
     left: 16px;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 2.4em);
     background-color: var(--biru-pucat);
-    border: 1px solid var(--garis-tegas);
+    border: 1px solid rgba(32, 80, 179, 0.25);
     border-radius: var(--radius);
     z-index: -1;
-    transition: transform var(--jeda);
-}
-
-.hero-foto:hover::before {
-    transform: translate(4px, 4px);
-}
-
-/* [REQ: POSITION] absolute floating badge */
-.lencana-foto {
-    position: absolute;              /* [REQ: POSITION] absolute */
-    bottom: 20px;
-    left: -18px;
-    background-color: var(--kaca-pekat);
-    backdrop-filter: var(--kaca-blur);
-    border: 1px solid var(--kaca-tepi);
-    border-radius: var(--radius-sm);
-    padding: 10px 16px;
-    box-shadow: var(--bayang);
-    display: flex;                   /* [REQ: FLEX] */
-    align-items: center;
-    gap: 12px;
-}
-
-.lencana-foto strong {
-    display: block;                  /* [REQ: DISPLAY] block */
-    font-size: 0.95rem;
-    color: var(--tinta);
-}
-
-.lencana-foto span {
-    display: block;
-    font-size: 0.78rem;
-    color: var(--redup);
-}
-
-.lencana-titik {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #10b981;
-    box-shadow: 0 0 8px #10b981;
 }
 
 .hero-foto figcaption {
-    margin-top: 16px;
-    font-size: 0.84rem;
+    margin-top: 12px;
+    font-size: 0.82rem;
     color: var(--redup);
-    text-align: center;
 }
 
+
+/* ---------- 5. Tombol & tautan ---------- */
+
 .tombol {
-    display: inline-flex;            /* [REQ: DISPLAY] inline-flex */
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 13px 26px;
-    font-family: var(--sans);
-    font-size: 0.96rem;
+    display: inline-block;           /* [REQ: DISPLAY] inline-block — <a> bisa diberi padding */
+    padding: 13px 28px;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: #ffffff !important;
+    color: #ffffff;
     background-color: var(--biru);
-    border: none;
     border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(29, 88, 200, 0.32);
+    box-shadow: 0 8px 20px rgba(32, 80, 179, 0.30);
     transition: background-color var(--jeda), transform var(--jeda), box-shadow var(--jeda);
 }
 
-/* [REQ: PSEUDO-CLASS] :hover dan :active pada tombol */
+/* [REQ: PSEUDO-CLASS] :hover dan :active */
 .tombol:hover {
     background-color: var(--biru-tua);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(29, 88, 200, 0.40);
+    box-shadow: 0 12px 26px rgba(32, 80, 179, 0.38);
 }
 
-.tombol:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(29, 88, 200, 0.25);
-}
-
-.tombol-cta {
-    padding: 14px 30px;
-    font-size: 1.02rem;
-}
-
-.tombol-sekunder {
-    background-color: var(--biru-pucat);
-    color: var(--biru) !important;
-    border: 1px solid var(--garis-tegas);
-    box-shadow: none;
-}
-
-.tombol-sekunder:hover {
-    background-color: var(--biru);
-    color: #ffffff !important;
-}
-
-.tombol-panah {
-    transition: transform var(--jeda);
-}
-
-.tombol:hover .tombol-panah {
-    transform: translateX(4px);
-}
+.tombol:active { transform: translateY(0); }
 
 .tautan-panah {
     font-weight: 600;
-    font-size: 0.96rem;
-    color: var(--biru);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 0.95rem;
 }
 
 .tautan-panah::after {
-    content: " \2193";
+    content: " \2193";               /* panah ke bawah */
+    display: inline-block;
     transition: transform var(--jeda);
 }
 
-.tautan-panah:hover::after {
-    transform: translateY(3px);
-}
+.tautan-panah:hover::after { transform: translateY(3px); }
 
-/* ==========================================================
-   6. STATISTIK: PANEL KACA GRID
-   ========================================================== */
+
+/* ---------- 6. Statistik: panel kaca ---------- */
 
 .statistik {
     max-width: var(--lebar);
     margin: 0 auto;
     padding: 34px 36px;
-    display: grid;                   /* [REQ: GRID] grid 4 kolom */
+    display: grid;                   /* [REQ: GRID] empat kolom */
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    -webkit-backdrop-filter: var(--kaca-blur);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--kaca-tepi);
     border-radius: var(--radius);
     box-shadow: var(--bayang);
 }
 
 .stat strong {
-    display: block;                  /* [REQ: DISPLAY] block */
+    display: block;                  /* [REQ: DISPLAY] block — angka turun satu baris */
     font-family: var(--serif);
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--biru);
+    font-size: 2rem;
+    font-weight: 600;
     font-variant-numeric: tabular-nums;
-    line-height: 1.15;
-    margin-bottom: 6px;
+    line-height: 1.2;
 }
 
-.stat span {
-    font-size: 0.88rem;
-    color: var(--redup);
-    line-height: 1.5;
-}
+.stat span { font-size: 0.88rem; color: var(--redup); }
 
-/* ==========================================================
-   7. STRUKTUR BAGIAN (SECTION): LABEL KIRI, ISI KANAN
-   ========================================================== */
+
+/* ---------- 7. Kerangka bagian: label kiri, isi kanan ---------- */
 
 .bagian {
     max-width: var(--lebar);
     margin: 0 auto;
     padding: 84px 24px 0;
     display: grid;                   /* [REQ: GRID] kolom label | kolom isi */
-    grid-template-columns: 210px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 24px 48px;
     align-items: start;
 }
 
 .bagian h2 {
-    font-size: 2.1rem;
-    margin: 0 0 24px;
-    max-width: 24ch;
+    font-size: 2rem;
+    margin: 0 0 26px;
+    max-width: 22ch;
 }
 
-.bagian-isi p {
-    color: var(--redup);
-    max-width: 64ch;
-    margin: 0 0 16px;
-    font-size: 1.02rem;
-}
+.bagian-isi p { color: var(--redup); max-width: 62ch; margin: 0 0 16px; }
 
-/* [REQ: PSEUDO-CLASS] :first-of-type — paragraf pembuka lebih besar dan gelap */
+/* [REQ: PSEUDO-CLASS] :first-of-type — paragraf pembuka lebih besar & gelap */
 .bagian-isi > p:first-of-type {
-    font-size: 1.12rem;
-    color: var(--tinta);
-    font-weight: 500;
-}
-
-to { opacity: 1; transform: translateY(0); }
-}
-
-.hangar-panel { display: block; }
-
-.hangar-kartu {
-    background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    border: 1px solid var(--kaca-tepi);
-    border-radius: var(--radius);
-    box-shadow: var(--bayang);
-    padding: 34px 32px;
-    display: grid;                   /* [REQ: GRID] 2 kolom: deskripsi | spek */
-    grid-template-columns: 1.2fr 1fr;
-    gap: 36px;
-}
-
-.hangar-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--biru);
-    background-color: var(--biru-pucat);
-    border-radius: 999px;
-    margin-bottom: 12px;
-}
-
-.hangar-info-utama h3 {
-    font-size: 1.45rem;
-    margin: 0 0 12px;
-}
-
-.hangar-fitur-list {
-    margin: 18px 0 0;
-    padding-left: 20px;
-    color: var(--redup);
-    font-size: 0.94rem;
-}
-
-.hangar-fitur-list li {
-    margin-bottom: 8px;
-}
-
-.hangar-fitur-list strong {
+    font-size: 1.1rem;
     color: var(--tinta);
 }
 
-.hangar-spesifikasi {
-    background-color: var(--kaca-pekat);
-    border: 1px solid var(--garis);
-    border-radius: 12px;
-    padding: 24px;
-}
 
-.hangar-spesifikasi h4 {
-    font-family: var(--sans);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--biru);
-    margin: 0 0 18px;
-}
-
-.spek-grid {
-    display: grid;                   /* [REQ: GRID] 2x2 grid spek teknis */
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.spek-item {
-    display: flex;                   /* [REQ: FLEX] */
-    flex-direction: column;
-}
-
-.spek-judul {
-    font-size: 0.78rem;
-    color: var(--redup);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-}
-
-.spek-nilai {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--tinta);
-}
-
-/* ==========================================================
-   9. LINIMASA: PANEL KACA GRID TAHUN & ISI
-   ========================================================== */
+/* ---------- 8. Linimasa: panel kaca berisi baris ---------- */
 
 .linimasa {
     list-style: none;
     margin: 0;
-    padding: 8px 30px;
+    padding: 6px 26px;
     background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    -webkit-backdrop-filter: var(--kaca-blur);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--kaca-tepi);
     border-radius: var(--radius);
     box-shadow: var(--bayang);
 }
 
 .linimasa li {
-    display: grid;                   /* [REQ: GRID] kolom tahun | isi */
-    grid-template-columns: 100px 1fr;
-    gap: 24px;
-    padding: 22px 0;
+    display: grid;                   /* [REQ: GRID] tahun | isi */
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    padding: 20px 0;
     border-top: 1px solid var(--garis);
-    transition: background-color var(--jeda), padding-left var(--jeda);
+    transition: background-color var(--jeda);
 }
 
 /* [REQ: PSEUDO-CLASS] :first-child — baris pertama tanpa garis atas */
-.linimasa li:first-child {
-    border-top: none;
-}
+.linimasa li:first-child { border-top: none; }
 
-/* [REQ: PSEUDO-CLASS] :hover pada item linimasa */
-.linimasa li:hover {
-    background-color: var(--biru-pucat);
-    padding-left: 8px;
-    border-radius: var(--radius-sm);
-}
+/* [REQ: PSEUDO-CLASS] :hover — baris disorot tipis */
+.linimasa li:hover { background-color: var(--biru-pucat); }
 
 .linimasa .tahun {
     font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     font-variant-numeric: tabular-nums;
     color: var(--biru);
 }
 
-.linimasa h3 {
-    font-size: 1.15rem;
-    margin: 0 0 6px;
-}
+.linimasa h3 { font-size: 1.08rem; margin: 0 0 4px; }
 
-.linimasa p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--redup);
-}
+.linimasa p { margin: 0; font-size: 0.94rem; }
 
-/* ==========================================================
-   10. KARYA: GRID KARTU KACA BERBAGI GARIS
-   ========================================================== */
+
+/* ---------- 9. Karya: kartu-kartu kaca ---------- */
 
 .karya-grid {
-    display: grid;                   /* [REQ: GRID] 2x2 kolom kartu */
+    display: grid;                   /* [REQ: GRID] 2×2 */
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 18px;
 }
 
 .karya-item {
-    padding: 32px 28px;
+    padding: 30px 28px;
     background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--kaca-tepi);
     border-radius: var(--radius);
     box-shadow: var(--bayang);
     transition: transform var(--jeda), background-color var(--jeda), box-shadow var(--jeda);
 }
 
-/* [REQ: PSEUDO-CLASS] :hover kartu karya */
+/* [REQ: PSEUDO-CLASS] :hover — kartu memekat dan sedikit terangkat */
 .karya-item:hover {
     background-color: var(--kaca-pekat);
-    transform: translateY(-5px);
-    box-shadow: 0 18px 42px rgba(19, 62, 146, 0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 38px rgba(23, 60, 136, 0.16);
 }
 
 .karya-jenis {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     font-size: 0.74rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--biru);
 }
 
-.karya-item h3 {
-    font-size: 1.25rem;
-    margin: 0 0 10px;
-}
+.karya-item h3 { font-size: 1.2rem; margin: 0 0 8px; }
 
-.karya-item p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--redup);
-}
+.karya-item > p:last-child { margin: 0; font-size: 0.94rem; color: var(--redup); }
 
-/* ==========================================================
-   11. KUTIPAN INSPIRATIF & CALL TO ACTION AKHIR
-   ========================================================== */
+
+/* ---------- 10. Kutipan: pita biru tua ---------- */
 
 .kutipan {
-    margin-top: 90px;
-    padding: 80px 24px;
-    background-image: linear-gradient(120deg, #0f1c3f 0%, #15387e 55%, #182b63 100%);
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 84px;
+    padding: 76px 24px;
+    background-image: linear-gradient(120deg, #13234d 0%, #173c88 55%, #1d2f6f 100%);
 }
 
 .kutipan blockquote {
-    max-width: 780px;
+    max-width: 720px;
     margin: 0 auto;
     text-align: center;
 }
 
 .kutipan p {
-    margin: 0 0 20px;
+    margin: 0 0 18px;
     font-family: var(--serif);
     font-style: italic;
-    font-size: 1.65rem;
-    line-height: 1.55;
-    color: #f1f5fd;
+    font-size: 1.55rem;
+    line-height: 1.5;
+    color: #eef2fa;
     text-wrap: balance;
 }
 
 .kutipan cite {
     font-style: normal;
-    font-size: 0.84rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #9db9ee;
 }
 
+
+/* ---------- 11. Ajakan akhir ---------- */
+
 .ajakan {
     max-width: var(--lebar);
     margin: 0 auto;
-    padding: 90px 24px;
+    padding: 84px 24px;
     text-align: center;
 }
 
-.ajakan h2 {
-    font-size: 2.1rem;
-    margin: 0 0 12px;
-}
+.ajakan h2 { font-size: 1.8rem; margin: 0 0 8px; }
 
-.ajakan p {
-    margin: 0 0 30px;
-    color: var(--redup);
-    font-size: 1.05rem;
-}
+.ajakan p { margin: 0 0 26px; color: var(--redup); }
 
-/* ==========================================================
-   12. HALAMAN CREATIVE CV (cv.html)
-   ========================================================== */
 
-.halaman-cv main {
-    padding-bottom: 60px;
-}
-
-/* Header Kartu Profil CV */
-.cv-kepala-kartu {
-    max-width: var(--lebar);
-    margin: 40px auto 0;
-    padding: 0 24px;
-}
-
-.cv-kepala-grid {
-    background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    -webkit-backdrop-filter: var(--kaca-blur);
-    border: 1px solid var(--kaca-tepi);
-    border-radius: var(--radius);
-    box-shadow: var(--bayang);
-    padding: 40px;
-    display: grid;                   /* [REQ: GRID] grid profil 2 kolom: foto | identitas */
-    grid-template-columns: 240px 1fr;
-    gap: 44px;
-    align-items: start;
-}
-
-.cv-foto-wadah {
-    position: relative;              /* [REQ: POSITION] relative */
-}
-
-.cv-foto-profil {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 14px;
-    border: 1px solid var(--kaca-tepi);
-    box-shadow: 0 12px 30px rgba(19, 62, 146, 0.20);
-    transition: transform var(--jeda);
-}
-
-.cv-foto-profil:hover {
-    transform: scale(1.02);
-}
-
-/* Status Badge di atas foto profil */
-.cv-foto-status {
-    position: absolute;              /* [REQ: POSITION] absolute */
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    background-color: var(--kaca-pekat);
-    border: 1px solid var(--garis-tegas);
-    border-radius: 999px;
-    padding: 5px 14px;
-    font-size: 0.74rem;
-    font-weight: 700;
-    color: var(--biru);
-    box-shadow: var(--bayang-kartu);
-    display: inline-flex;            /* [REQ: DISPLAY] inline-flex */
-    align-items: center;
-    gap: 6px;
-}
-
-.status-kedip {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #10b981;
-    display: inline-block;
-    box-shadow: 0 0 6px #10b981;
-}
-
-.cv-tag-atas {
-    display: flex;                   /* [REQ: FLEX] */
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.cv-label-kategori {
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--biru);
-}
-
-.cv-label-spesialisasi {
-    font-size: 0.76rem;
-    color: var(--redup);
-}
-
-.cv-nama {
-    font-size: 2.2rem;
-    margin: 0 0 8px;
-    letter-spacing: -0.01em;
-}
-
-.cv-jabatan {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--biru);
-    margin: 0 0 16px;
-}
-
-.cv-ringkasan-profil {
-    font-size: 1rem;
-    color: var(--redup);
-    line-height: 1.7;
-    margin: 0 0 20px;
-    max-width: 70ch;
-}
-
-.cv-meta-list {
-    list-style: none;
-    margin: 0 0 24px;
-    padding: 0;
-    display: flex;                   /* [REQ: FLEX] */
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.92rem;
-    color: var(--redup);
-}
-
-.cv-meta-list li {
-    display: flex;                   /* [REQ: FLEX] */
-    align-items: center;
-    gap: 10px;
-}
-
-.meta-ikon {
-    font-size: 1.05rem;
-    flex-shrink: 0;
-}
-
-.cv-aksi-bar {
-    display: flex;                   /* [REQ: FLEX] */
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.tombol-cetak {
-    background-color: var(--biru);
-}
-
-.ikon-cetak {
-    font-size: 1.1rem;
-}
-
-/* ----------------------------------------------------------
-   SEKSI DESKRIPSI KARAKTER & KEPRIBADIAN (CREATIVE CV)
-   ---------------------------------------------------------- */
-
-.cv-seksi-karakter {
-    max-width: var(--lebar);
-    margin: 60px auto 0;
-    padding: 0 24px;
-}
-
-.cv-judul-seksi {
-    text-align: center;
-    margin-bottom: 36px;
-}
-
-.cv-judul-seksi h2 {
-    font-size: 2.1rem;
-    margin: 0 0 8px;
-}
-
-.subjudul-seksi {
-    color: var(--redup);
-    font-size: 1rem;
-    margin: 0 auto;
-    max-width: 60ch;
-}
-
-.cv-karakter-grid {
-    display: grid;                   /* [REQ: GRID] grid kartu karakter 3 kolom */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.karakter-kartu {
-    background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    border: 1px solid var(--kaca-tepi);
-    border-radius: var(--radius);
-    padding: 28px 24px;
-    box-shadow: var(--bayang-kartu);
-    transition: transform var(--jeda), box-shadow var(--jeda), background-color var(--jeda);
-    display: flex;                   /* [REQ: FLEX] kartu kartu tersusun fleksibel */
-    flex-direction: column;
-}
-
-/* [REQ: PSEUDO-CLASS] :hover pada kartu karakter */
-.karakter-kartu:hover {
-    background-color: var(--kaca-pekat);
-    transform: translateY(-6px);
-    box-shadow: var(--bayang);
-}
-
-.karakter-ikon {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.karakter-kartu h3 {
-    font-size: 1.2rem;
-    margin: 0 0 4px;
-}
-
-.karakter-tag {
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--biru);
-    margin: 0 0 12px;
-}
-
-.karakter-kartu p:not(.karakter-tag) {
-    font-size: 0.92rem;
-    color: var(--redup);
-    line-height: 1.65;
-    margin: 0;
-}
-
-.cv-tab-area {
-    max-width: var(--lebar);
-    margin: 60px auto 0;
-    padding: 0 24px;
-}
-
-.cv-tab-bingkai {
-    background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
-    -webkit-backdrop-filter: var(--kaca-blur);
-    border: 1px solid var(--kaca-tepi);
-    border-radius: var(--radius);
-    box-shadow: var(--bayang);
-    overflow: hidden;
-}
-
-.cv-panel {
-    padding: 36px 36px 44px;
-}
-
-.panel-judul-bar {
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--garis);
-    padding-bottom: 16px;
-}
-
-.panel-judul-bar h3 {
-    font-size: 1.45rem;
-    margin: 0 0 4px;
-}
-
-.panel-subjudul {
-    font-size: 0.9rem;
-    color: var(--redup);
-}
-
-/* Daftar Riwayat CV (Pengalaman & Pendidikan) */
-.cv-daftar {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.cv-daftar > li {
-    padding: 24px 0;
-    border-top: 1px solid var(--garis);
-}
-
-/* [REQ: PSEUDO-CLASS] :first-child */
-.cv-daftar > li:first-child {
-    border-top: none;
-    padding-top: 0;
-}
-
-.cv-baris-atas {
-    display: flex;                   /* [REQ: FLEX] */
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 4px;
-}
-
-.cv-baris-atas h3 {
-    font-size: 1.15rem;
-    margin: 0;
-    color: var(--tinta);
-}
-
-.cv-tahun {
-    flex-shrink: 0;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--biru);
-    font-variant-numeric: tabular-nums;
-    background-color: var(--biru-pucat);
-    padding: 3px 10px;
-    border-radius: 999px;
-}
-
-.cv-institusi {
-    margin: 4px 0 10px;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--biru-tua);
-}
-
-[data-theme="blueprint"] .cv-institusi {
-    color: var(--biru);
-}
-
-.cv-deskripsi {
-    margin: 0;
-    color: var(--redup);
-    font-size: 0.95rem;
-    line-height: 1.65;
-}
-
-/* ----------------------------------------------------------
-   VISUAL SKILL METERS / BARS (KEAHLIAN)
-   ---------------------------------------------------------- */
-
-.keahlian-layout {
-    display: grid;                   /* [REQ: GRID] 2 kolom keahlian */
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-    margin-bottom: 30px;
-}
-
-.keahlian-blok h4 {
-    font-family: var(--sans);
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--biru);
-    margin: 0 0 20px;
-    border-bottom: 1px solid var(--garis);
-    padding-bottom: 8px;
-}
-
-.meter-item {
-    margin-bottom: 18px;
-}
-
-.meter-label {
-    display: flex;                   /* [REQ: FLEX] label kiri, nilai persentase kanan */
-    justify-content: space-between;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--tinta);
-    margin-bottom: 6px;
-}
-
-.meter-label strong {
-    color: var(--biru);
-    font-variant-numeric: tabular-nums;
-}
-
-.meter-bar {
-    width: 100%;
-    height: 8px;
-    background-color: var(--garis);
-    border-radius: 999px;
-    overflow: hidden;
-}
-
-.meter-isi {
-    height: 100%;
-    background: linear-gradient(90deg, var(--biru), #38bdf8);
-    border-radius: 999px;
-    transition: width 0.8s ease-in-out;
-}
-
-.cv-tag-container {
-    display: flex;                   /* [REQ: FLEX] */
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    padding-top: 20px;
-    border-top: 1px solid var(--garis);
-}
-
-.cv-tag {
-    display: inline-block;           /* [REQ: DISPLAY] inline-block */
-    padding: 6px 14px;
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: var(--biru);
-    background-color: var(--biru-pucat);
-    border: 1px solid var(--garis-tegas);
-    border-radius: 999px;
-}
-
-/* ----------------------------------------------------------
-   KARYA & PATEN (CV PANEL)
-   ---------------------------------------------------------- */
-
-.cv-grid-ringkas {
-    display: grid;                   /* [REQ: GRID] grid 2 kolom karya */
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.cv-kartu-ringkas {
-    padding: 24px;
-    background-color: var(--kaca-pekat);
-    border: 1px solid var(--garis);
-    border-radius: 12px;
-    transition: transform var(--jeda);
-}
-
-.cv-kartu-ringkas:hover {
-    transform: translateY(-3px);
-}
-
-.kartu-badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--biru);
-    margin-bottom: 6px;
-}
-
-.cv-kartu-ringkas h3 {
-    font-size: 1.15rem;
-    margin: 0 0 8px;
-}
-
-.cv-kartu-ringkas p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--redup);
-    line-height: 1.6;
-}
-
-/* ----------------------------------------------------------
-   PENGHARGAAN INTERNASIONAL
-   ---------------------------------------------------------- */
-
-.cv-penghargaan-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.cv-penghargaan-list li {
-    display: grid;                   /* [REQ: GRID] grid tahun | deskripsi */
-    grid-template-columns: 80px 1fr;
-    gap: 20px;
-    padding: 18px 0;
-    border-top: 1px solid var(--garis);
-}
-
-.cv-penghargaan-list li:first-child {
-    border-top: none;
-    padding-top: 0;
-}
-
-.penghargaan-tahun {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--biru);
-}
-
-.penghargaan-konten strong {
-    font-size: 1.05rem;
-    color: var(--tinta);
-    display: block;
-    margin-bottom: 4px;
-}
-
-.penghargaan-konten p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--redup);
-}
-
-/* ==========================================================
-   13. FOOTER
-   ========================================================== */
+/* ---------- 12. Footer ---------- */
 
 .footer {
     border-top: 1px solid var(--garis);
-    padding: 30px 24px;
-    margin-top: 60px;
-    background-color: var(--kaca);
-    backdrop-filter: var(--kaca-blur);
+    padding: 26px 24px;
 }
 
 .footer-isi {
@@ -1279,35 +441,29 @@ to { opacity: 1; transform: translateY(0); }
     display: flex;                   /* [REQ: FLEX] */
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
-.footer p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--redup);
-}
+.footer p { margin: 0; font-size: 0.85rem; color: var(--redup); }
 
-@media (max-width: 960px) {
-    .navbar {
-        margin: 10px 16px 0;
-    }
+
+/* ==========================================================
+   13. [REQ: RESPONSIVE] — tablet lalu HP
+   ========================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .navbar { margin: 10px 16px 0; }
 
     .hero {
-        grid-template-columns: 1fr;  /* [REQ: GRID] 1 kolom vertikal */
-        padding: 48px 24px 40px;
+        grid-template-columns: 1fr;
+        padding: 52px 24px 44px;
         gap: 40px;
     }
 
-    .hero h1 {
-        font-size: 2.6rem;
-    }
+    .hero h1 { font-size: 2.5rem; }
 
-    .hero-foto {
-        max-width: 380px;
-        margin: 0 auto;
-    }
+    .hero-foto { max-width: 360px; }
 
     .statistik {
         margin: 0 16px;
@@ -1316,196 +472,263 @@ to { opacity: 1; transform: translateY(0); }
     }
 
     .bagian {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;   /* label pindah ke atas isi */
         padding-top: 60px;
-        gap: 12px;
-    }
-
-    .hangar-kartu {
-        grid-template-columns: 1fr;
-    }
-
-    /* CV Responsif */
-    .cv-kepala-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 28px;
-    }
-
-    .cv-foto-wadah {
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-    .cv-tag-atas,
-    .cv-meta-list li,
-    .cv-aksi-bar {
-        justify-content: center;
-    }
-
-    .cv-karakter-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .keahlian-layout {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-}
-
-@media (max-width: 640px) {
-    body {
-        font-size: 15.5px;
-    }
-
-    .navbar {
-        top: 6px;
-        margin: 6px 10px 0;
-        padding: 0 4px;
-    }
-
-    .navbar-isi {
-        flex-direction: column;      /* [REQ: FLEX] arah kolom */
-        align-items: flex-start;
-        gap: 10px;
-        padding: 12px 14px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        gap: 14px;
-        width: 100%;
-    }
-
-    .tombol-tema {
-        align-self: flex-start;
-    }
-
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-
-    .hero-foto {
-        max-width: 320px;
-    }
-
-    .lencana-foto {
-        left: 0;
-        bottom: 10px;
-    }
-
-    .hero-tombol {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .tombol {
-        width: 100%;
-    }
-
-    .statistik {
-        grid-template-columns: 1fr;
-        padding: 24px 20px;
-    }
-
-    .stat {
-        border-left: 3px solid var(--biru);
-        padding-left: 14px;
-    }
-
-    .linimasa {
-        padding: 4px 16px;
-    }
-
-    .linimasa li {
-        grid-template-columns: 70px 1fr;
-        gap: 12px;
-    }
-
-    .karya-grid,
-    .cv-grid-ringkas,
-    .cv-karakter-grid,
-    .spek-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cv-kepala-grid {
-        padding: 24px 18px;
-    }
-
-    .cv-nama {
-        font-size: 1.7rem;
-    }
-    .cv-panel {
-        padding: 24px 16px;
-    }
-
-    .cv-baris-atas {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 4px;
     }
 
-    .cv-penghargaan-list li {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .kutipan p {
-        font-size: 1.3rem;
-    }
-
-    .footer-isi {
-        justify-content: center;
-        text-align: center;
-    }
+    .kutipan { margin-top: 60px; }
 }
 
-@media print {
-    .navbar,
-    .tombol-tema,
-    .cv-aksi-bar,
-    .ajakan,
-    .footer {
-        display: none !important;
+/* HP */
+@media (max-width: 600px) {
+    .navbar { top: 8px; }
+
+    .navbar-isi {
+        flex-direction: column;      /* [REQ: FLEX] arah sumbu berubah */
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 18px;
     }
 
-    body {
-        background: #ffffff !important;
-        color: #000000 !important;
-        font-size: 11pt;
-        line-height: 1.5;
-    }
+    .menu { flex-wrap: wrap; gap: 16px; }
 
-    .cv-kepala-kartu,
-    .cv-seksi-karakter,
-    .cv-tab-area {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+    .hero h1 { font-size: 2rem; }
 
-    .cv-kepala-grid,
-    .cv-tab-bingkai,
-    .karakter-kartu {
-        background: none !important;
-        border: 1px solid #cccccc !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-    }
+    .statistik { grid-template-columns: 1fr; }
 
-    .cv-panel {
-        display: block !important;
-        padding: 16pt 0 !important;
-        page-break-inside: avoid;
-    }
+    .stat { border-left: 2px solid var(--biru); padding-left: 14px; }
 
-    .cv-foto-profil {
-        max-width: 140px;
-    }
+    .linimasa { padding: 4px 18px; }
 
-    a {
-        color: #000000 !important;
-        text-decoration: none !important;
-    }
+    .linimasa li { grid-template-columns: 64px 1fr; gap: 14px; }
+
+    .karya-grid { grid-template-columns: 1fr; }
+
+    .kutipan p { font-size: 1.25rem; }
+
+    .tombol { width: 100%; text-align: center; }
+
+    .footer-isi { justify-content: center; text-align: center; }
+}
+
+/* Hormati pengguna yang mematikan animasi di sistemnya */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
+
+/* ==========================================================
+   14. HALAMAN CV — kepala + tab interaktif
+   ========================================================== */
+
+/* ---------- Kepala CV ---------- */
+
+.cv-kepala {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 84px 24px 0;
+}
+
+.cv-kepala h1 {
+    margin: 0 0 16px;
+    font-size: 2.6rem;
+}
+
+.cv-pengantar {
+    margin: 0 0 24px;
+    max-width: 62ch;
+    font-size: 1.05rem;
+    color: var(--redup);
+}
+
+.cv-kontak {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;                   /* [REQ: FLEX] */
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.92rem;
+    color: var(--redup);
+}
+
+.cv-kontak a { font-weight: 600; }
+
+
+/* ---------- Area tab ---------- */
+
+.cv-tab-area {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 40px 24px 0;
+}
+
+.cv-tab-bingkai {
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+    overflow: hidden;
+}
+
+.cv-tab-list {
+    display: flex;                   /* [REQ: FLEX] daftar tombol tab sejajar */
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 14px 18px 0;
+    border-bottom: 1px solid var(--garis);
+}
+
+.cv-tab {
+    position: relative;              /* [REQ: POSITION] induk garis penanda aktif */
+    padding: 12px 18px;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--redup);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :hover */
+.cv-tab:hover { color: var(--tinta); }
+
+/* [REQ: PSEUDO-CLASS] [aria-selected="true"] — tab yang sedang aktif */
+.cv-tab[aria-selected="true"] { color: var(--biru); }
+
+.cv-tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;              /* [REQ: POSITION] absolute — garis penanda tab aktif */
+    left: 12px;
+    right: 12px;
+    bottom: -1px;
+    height: 2px;
+    background-color: var(--biru);
+}
+
+.cv-tab:focus-visible {
+    outline: 2px solid var(--biru);
+    outline-offset: 2px;
+}
+
+.cv-panel {
+    padding: 32px 30px 36px;
+}
+
+/* Panel yang tidak aktif disembunyikan lewat atribut [hidden] bawaan HTML */
+
+
+/* ---------- Isi panel: daftar riwayat ---------- */
+
+.cv-daftar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-daftar > li {
+    padding: 18px 0;
+    border-top: 1px solid var(--garis);
+}
+
+/* [REQ: PSEUDO-CLASS] :first-child — item pertama tanpa garis atas */
+.cv-daftar > li:first-child { border-top: none; padding-top: 0; }
+
+.cv-baris-atas {
+    display: flex;                   /* [REQ: FLEX] judul kiri, tahun kanan */
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cv-baris-atas h3 { font-size: 1.05rem; margin: 0; }
+
+.cv-tahun {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--biru);
+    font-variant-numeric: tabular-nums;
+}
+
+.cv-institusi {
+    margin: 4px 0 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--tinta);
+}
+
+.cv-daftar p:not(.cv-institusi) { margin: 0; color: var(--redup); font-size: 0.94rem; }
+
+
+/* ---------- Isi panel: karya ringkas ---------- */
+
+.cv-grid-ringkas {
+    display: grid;                   /* [REQ: GRID] kartu ringkas 2 kolom */
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.cv-kartu-ringkas {
+    padding: 18px 20px;
+    background-color: var(--kaca-pekat);
+    border: 1px solid var(--garis);
+    border-radius: 12px;
+}
+
+.cv-kartu-ringkas h3 { font-size: 1rem; margin: 0 0 6px; }
+
+.cv-kartu-ringkas p { margin: 0; font-size: 0.9rem; color: var(--redup); }
+
+
+/* ---------- Isi panel: penghargaan sederhana ---------- */
+
+.cv-daftar-sederhana {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--redup);
+}
+
+.cv-daftar-sederhana li { padding: 6px 0; }
+.cv-daftar-sederhana strong { color: var(--tinta); }
+
+
+/* ---------- Isi panel: keahlian (tag) ---------- */
+
+.cv-tag-grup {
+    display: flex;                   /* [REQ: FLEX] tag mengalir dan membungkus */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cv-tag {
+    display: inline-block;           /* [REQ: DISPLAY] inline-block */
+    padding: 8px 16px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--biru-tua);
+    background-color: var(--biru-pucat);
+    border: 1px solid rgba(32, 80, 179, 0.22);
+    border-radius: 999px;
+}
+
+
+/* ---------- [REQ: RESPONSIVE] CV di layar sempit ---------- */
+
+@media (max-width: 900px) {
+    .cv-kepala { padding-top: 60px; }
+    .cv-grid-ringkas { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .cv-kepala h1 { font-size: 2rem; }
+    .cv-tab-list { gap: 2px; }
+    .cv-tab { padding: 10px 12px; font-size: 0.86rem; }
+    .cv-panel { padding: 24px 18px 28px; }
+    .cv-baris-atas { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
