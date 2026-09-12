@@ -1,0 +1,534 @@
+/* ==========================================================
+   style.css — Portfolio B.J. Habibie
+   Praktikum Modul 1 PemWeb 2026 — HTML & CSS native
+
+   Arah desain: "langit teknik" — latar gradasi biru berlapis,
+   panel kaca tembus pandang (frosted glass / backdrop-filter),
+   tinta gelap, satu biru teknik. Font sistem, tanpa internet.
+
+   Peta requirement (untuk demo, cari komentar bertanda ini):
+     [REQ: PSEUDO-CLASS]  [REQ: POSITION]  [REQ: DISPLAY]
+     [REQ: FLEX]          [REQ: GRID]      [REQ: RESPONSIVE]
+   ========================================================== */
+
+
+/* ---------- 1. Variabel ---------- */
+
+:root {
+    --tinta:      #151a22;
+    --redup:      #545e6e;
+    --biru:       #2050b3;   /* biru teknik / blueprint */
+    --biru-tua:   #173c88;
+    --biru-pucat: rgba(32, 80, 179, 0.08);
+    --garis:      rgba(21, 26, 34, 0.12);
+
+    /* resep kaca: putih tembus pandang + blur latar */
+    --kaca:       rgba(255, 255, 255, 0.55);
+    --kaca-pekat: rgba(255, 255, 255, 0.72);
+    --kaca-tepi:  rgba(255, 255, 255, 0.65);
+
+    --serif: Georgia, "Times New Roman", serif;
+    --sans:  "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+
+    --lebar:  1060px;
+    --radius: 16px;
+    --jeda:   0.22s ease;
+    --bayang: 0 10px 30px rgba(23, 60, 136, 0.10);
+}
+
+
+/* ---------- 2. Dasar ---------- */
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--tinta);
+    /* latar berlapis: tiga cahaya biru di atas dasar dingin */
+    background-color: #e9eef6;
+    background-image:
+        radial-gradient(900px 600px at 8% -5%,  rgba(64, 118, 226, 0.20), transparent 60%),
+        radial-gradient(800px 550px at 95% 12%, rgba(120, 92, 228, 0.13), transparent 60%),
+        radial-gradient(900px 700px at 50% 105%, rgba(38, 154, 204, 0.14), transparent 65%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+img { max-width: 100%; display: block; }          /* [REQ: DISPLAY] block */
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-top: 0;
+    text-wrap: balance;
+}
+
+a { color: var(--biru); text-decoration: none; }
+
+/* label kecil huruf kapital — dipakai berulang */
+.label {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--biru);
+}
+
+/* [REQ: PSEUDO-CLASS] :focus-visible — penanda fokus keyboard */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--biru);
+    outline-offset: 3px;
+}
+
+
+/* ---------- 3. Navbar: bilah kaca melayang ---------- */
+
+.navbar {
+    position: sticky;                /* [REQ: POSITION] sticky — menempel saat digulir */
+    top: 14px;
+    z-index: 100;
+    max-width: var(--lebar);
+    margin: 14px auto 0;
+    padding: 0 8px;
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);     /* efek kaca: buramkan apa pun di belakangnya */
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+}
+
+.navbar-isi {
+    padding: 14px 20px;
+    display: flex;                   /* [REQ: FLEX] nama kiri, menu kanan */
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--tinta);
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;                   /* [REQ: FLEX] */
+    align-items: baseline;
+    gap: 26px;
+}
+
+.menu a {
+    position: relative;              /* [REQ: POSITION] induk garis bawah animasi */
+    display: inline-block;           /* [REQ: DISPLAY] inline-block */
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: var(--tinta);
+}
+
+/* garis bawah yang tumbuh saat hover */
+.menu a::after {
+    content: "";
+    position: absolute;              /* [REQ: POSITION] absolute — relatif ke tautannya */
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--biru);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :hover */
+.menu a:hover::after { transform: scaleX(1); }
+
+.menu-cv { color: var(--biru); font-weight: 600; }
+
+
+/* ---------- 4. Hero ---------- */
+
+.hero {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 84px 24px 64px;
+    display: grid;                   /* [REQ: GRID] teks | foto */
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+    font-size: 3.4rem;
+    letter-spacing: -0.01em;
+}
+
+.hero-pengantar {
+    margin: 0 0 32px;
+    max-width: 52ch;
+    font-size: 1.12rem;
+    color: var(--redup);
+}
+
+.hero-tombol {
+    display: flex;                   /* [REQ: FLEX] */
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+}
+
+.hero-foto {
+    margin: 0;
+    position: relative;              /* [REQ: POSITION] induk untuk bingkai offset */
+}
+
+.hero-foto img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--kaca-tepi);
+    box-shadow: 0 18px 44px rgba(23, 60, 136, 0.20);
+}
+
+/* bingkai kaca tipis yang bergeser di belakang foto */
+.hero-foto::before {
+    content: "";
+    position: absolute;              /* [REQ: POSITION] absolute */
+    top: 16px;
+    left: 16px;
+    width: 100%;
+    height: calc(100% - 2.4em);
+    background-color: var(--biru-pucat);
+    border: 1px solid rgba(32, 80, 179, 0.25);
+    border-radius: var(--radius);
+    z-index: -1;
+}
+
+.hero-foto figcaption {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--redup);
+}
+
+
+/* ---------- 5. Tombol & tautan ---------- */
+
+.tombol {
+    display: inline-block;           /* [REQ: DISPLAY] inline-block — <a> bisa diberi padding */
+    padding: 13px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--biru);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(32, 80, 179, 0.30);
+    transition: background-color var(--jeda), transform var(--jeda), box-shadow var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :hover dan :active */
+.tombol:hover {
+    background-color: var(--biru-tua);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(32, 80, 179, 0.38);
+}
+
+.tombol:active { transform: translateY(0); }
+
+.tautan-panah {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.tautan-panah::after {
+    content: " \2193";               /* panah ke bawah */
+    display: inline-block;
+    transition: transform var(--jeda);
+}
+
+.tautan-panah:hover::after { transform: translateY(3px); }
+
+
+/* ---------- 6. Statistik: panel kaca ---------- */
+
+.statistik {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 34px 36px;
+    display: grid;                   /* [REQ: GRID] empat kolom */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+}
+
+.stat strong {
+    display: block;                  /* [REQ: DISPLAY] block — angka turun satu baris */
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.stat span { font-size: 0.88rem; color: var(--redup); }
+
+
+/* ---------- 7. Kerangka bagian: label kiri, isi kanan ---------- */
+
+.bagian {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 84px 24px 0;
+    display: grid;                   /* [REQ: GRID] kolom label | kolom isi */
+    grid-template-columns: 200px 1fr;
+    gap: 24px 48px;
+    align-items: start;
+}
+
+.bagian h2 {
+    font-size: 2rem;
+    margin: 0 0 26px;
+    max-width: 22ch;
+}
+
+.bagian-isi p { color: var(--redup); max-width: 62ch; margin: 0 0 16px; }
+
+/* [REQ: PSEUDO-CLASS] :first-of-type — paragraf pembuka lebih besar & gelap */
+.bagian-isi > p:first-of-type {
+    font-size: 1.1rem;
+    color: var(--tinta);
+}
+
+
+/* ---------- 8. Linimasa: panel kaca berisi baris ---------- */
+
+.linimasa {
+    list-style: none;
+    margin: 0;
+    padding: 6px 26px;
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+}
+
+.linimasa li {
+    display: grid;                   /* [REQ: GRID] tahun | isi */
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--garis);
+    transition: background-color var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :first-child — baris pertama tanpa garis atas */
+.linimasa li:first-child { border-top: none; }
+
+/* [REQ: PSEUDO-CLASS] :hover — baris disorot tipis */
+.linimasa li:hover { background-color: var(--biru-pucat); }
+
+.linimasa .tahun {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--biru);
+}
+
+.linimasa h3 { font-size: 1.08rem; margin: 0 0 4px; }
+
+.linimasa p { margin: 0; font-size: 0.94rem; }
+
+
+/* ---------- 9. Karya: kartu-kartu kaca ---------- */
+
+.karya-grid {
+    display: grid;                   /* [REQ: GRID] 2×2 */
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.karya-item {
+    padding: 30px 28px;
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+    transition: transform var(--jeda), background-color var(--jeda), box-shadow var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :hover — kartu memekat dan sedikit terangkat */
+.karya-item:hover {
+    background-color: var(--kaca-pekat);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 38px rgba(23, 60, 136, 0.16);
+}
+
+.karya-jenis {
+    margin: 0 0 12px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--biru);
+}
+
+.karya-item h3 { font-size: 1.2rem; margin: 0 0 8px; }
+
+.karya-item > p:last-child { margin: 0; font-size: 0.94rem; color: var(--redup); }
+
+
+/* ---------- 10. Kutipan: pita biru tua ---------- */
+
+.kutipan {
+    margin-top: 84px;
+    padding: 76px 24px;
+    background-image: linear-gradient(120deg, #13234d 0%, #173c88 55%, #1d2f6f 100%);
+}
+
+.kutipan blockquote {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.kutipan p {
+    margin: 0 0 18px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.55rem;
+    line-height: 1.5;
+    color: #eef2fa;
+    text-wrap: balance;
+}
+
+.kutipan cite {
+    font-style: normal;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9db9ee;
+}
+
+
+/* ---------- 11. Ajakan akhir ---------- */
+
+.ajakan {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 84px 24px;
+    text-align: center;
+}
+
+.ajakan h2 { font-size: 1.8rem; margin: 0 0 8px; }
+
+.ajakan p { margin: 0 0 26px; color: var(--redup); }
+
+
+/* ---------- 12. Footer ---------- */
+
+.footer {
+    border-top: 1px solid var(--garis);
+    padding: 26px 24px;
+}
+
+.footer-isi {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    display: flex;                   /* [REQ: FLEX] */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.footer p { margin: 0; font-size: 0.85rem; color: var(--redup); }
+
+
+/* ==========================================================
+   13. [REQ: RESPONSIVE] — tablet lalu HP
+   ========================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .navbar { margin: 10px 16px 0; }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 52px 24px 44px;
+        gap: 40px;
+    }
+
+    .hero h1 { font-size: 2.5rem; }
+
+    .hero-foto { max-width: 360px; }
+
+    .statistik {
+        margin: 0 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .bagian {
+        grid-template-columns: 1fr;   /* label pindah ke atas isi */
+        padding-top: 60px;
+        gap: 4px;
+    }
+
+    .kutipan { margin-top: 60px; }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .navbar { top: 8px; }
+
+    .navbar-isi {
+        flex-direction: column;      /* [REQ: FLEX] arah sumbu berubah */
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 18px;
+    }
+
+    .menu { flex-wrap: wrap; gap: 16px; }
+
+    .hero h1 { font-size: 2rem; }
+
+    .statistik { grid-template-columns: 1fr; }
+
+    .stat { border-left: 2px solid var(--biru); padding-left: 14px; }
+
+    .linimasa { padding: 4px 18px; }
+
+    .linimasa li { grid-template-columns: 64px 1fr; gap: 14px; }
+
+    .karya-grid { grid-template-columns: 1fr; }
+
+    .kutipan p { font-size: 1.25rem; }
+
+    .tombol { width: 100%; text-align: center; }
+
+    .footer-isi { justify-content: center; text-align: center; }
+}
+
+/* Hormati pengguna yang mematikan animasi di sistemnya */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}

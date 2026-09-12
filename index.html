@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.J. Habibie — Insinyur, Ilmuwan, Negarawan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR: position sticky + display flex ===== -->
+    <header class="navbar">
+        <div class="navbar-isi">
+            <a href="#beranda" class="logo">B.&thinsp;J.&nbsp;Habibie</a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#perjalanan">Perjalanan</a></li>
+                    <li><a href="#karya">Karya</a></li>
+                    <li><a href="cv.html" class="menu-cv">Curriculum Vitae</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section id="beranda" class="hero">
+            <div class="hero-teks">
+                <p class="label">1936&ndash;2019 &middot; Insinyur &amp; Negarawan</p>
+                <h1>Bacharuddin Jusuf Habibie</h1>
+                <p class="hero-pengantar">
+                    Insinyur penerbangan yang membawa Indonesia merancang pesawatnya sendiri,
+                    lalu menjadi Presiden ke-3 Republik Indonesia pada salah satu masa
+                    tersulit dalam sejarahnya.
+                </p>
+
+                <!-- Call to action: mengarah ke halaman CV -->
+                <div class="hero-tombol">
+                    <a href="cv.html" class="tombol">Lihat Curriculum Vitae</a>
+                    <a href="#karya" class="tautan-panah">Jelajahi karya</a>
+                </div>
+            </div>
+
+            <figure class="hero-foto">
+                <!-- Ganti src di bawah dengan foto asli: img/habibie.jpg -->
+                <img src="img/habibie.svg" alt="Potret B.J. Habibie" width="420" height="520">
+                <figcaption>Dipl.-Ing. (1960), Dr.-Ing. <em>summa cum laude</em> (1965) &mdash; RWTH Aachen</figcaption>
+            </figure>
+        </section>
+
+        <!-- ===== STATISTIK: display grid ===== -->
+        <section class="statistik" aria-label="Ringkasan angka">
+            <div class="stat">
+                <strong>46</strong>
+                <span>paten &amp; publikasi teknik penerbangan</span>
+            </div>
+            <div class="stat">
+                <strong>1995</strong>
+                <span>N-250 Gatotkaca terbang perdana</span>
+            </div>
+            <div class="stat">
+                <strong>20 thn</strong>
+                <span>memimpin riset teknologi nasional</span>
+            </div>
+            <div class="stat">
+                <strong>17 bln</strong>
+                <span>masa kepresidenan yang mengubah arah reformasi</span>
+            </div>
+        </section>
+
+        <!-- ===== TENTANG: grid label | isi ===== -->
+        <section id="tentang" class="bagian">
+            <p class="label">Tentang</p>
+            <div class="bagian-isi">
+                <h2>Insinyur yang kebetulan menjadi presiden</h2>
+                <p class="paragraf-pembuka">
+                    Lahir di Parepare, Sulawesi Selatan, 25 Juni 1936, Habibie menempuh
+                    pendidikan teknik di ITB sebelum melanjutkan ke Technische Hochschule
+                    Aachen, Jerman, dan lulus Doktor-Ingenieur dengan predikat
+                    <em>summa cum laude</em> pada 1965.
+                </p>
+                <p>
+                    Di Messerschmitt-B&ouml;lkow-Blohm ia menanjak hingga wakil presiden bidang
+                    teknologi &mdash; posisi yang nyaris tak pernah dipegang orang asing.
+                    Temuannya tentang perambatan retakan pada struktur pesawat dikenal sebagai
+                    <strong>Faktor Habibie</strong> dan memberinya julukan <em>Mr.&nbsp;Crack</em>.
+                </p>
+                <p>
+                    Ia pulang pada 1974 atas panggilan negara: memimpin BPPT, menjabat Menteri
+                    Riset dan Teknologi selama dua dekade, lalu menjadi Presiden ke-3 Republik
+                    Indonesia pada 21 Mei 1998.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== PERJALANAN: linimasa grid tahun | isi ===== -->
+        <section id="perjalanan" class="bagian">
+            <p class="label">Perjalanan</p>
+            <div class="bagian-isi">
+                <h2>Garis waktu</h2>
+
+                <ol class="linimasa">
+                    <li>
+                        <span class="tahun">1936</span>
+                        <div>
+                            <h3>Lahir di Parepare</h3>
+                            <p>Anak keempat dari delapan bersaudara di Sulawesi Selatan.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tahun">1965</span>
+                        <div>
+                            <h3>Doktor-Ingenieur, Aachen</h3>
+                            <p>Lulus <em>summa cum laude</em> bidang konstruksi pesawat terbang.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tahun">1974</span>
+                        <div>
+                            <h3>Kembali ke Indonesia</h3>
+                            <p>Memimpin pengembangan industri strategis dan teknologi nasional.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tahun">1978</span>
+                        <div>
+                            <h3>Menteri Riset dan Teknologi</h3>
+                            <p>Menjabat dua puluh tahun sekaligus memimpin BPPT.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tahun">1995</span>
+                        <div>
+                            <h3>N-250 Gatotkaca mengudara</h3>
+                            <p>Pesawat turboprop rancangan dalam negeri terbang perdana 10 Agustus.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tahun">1998</span>
+                        <div>
+                            <h3>Presiden ke-3 Republik Indonesia</h3>
+                            <p>Membuka kebebasan pers, kemerdekaan partai politik, dan independensi Bank Indonesia.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== KARYA: grid kartu berbagi garis ===== -->
+        <section id="karya" class="bagian">
+            <p class="label">Karya</p>
+            <div class="bagian-isi">
+                <h2>Yang ia tinggalkan</h2>
+
+                <div class="karya-grid">
+                    <article class="karya-item">
+                        <p class="karya-jenis">Pesawat angkut</p>
+                        <h3>CN-235</h3>
+                        <p>Hasil kerja sama IPTN dan CASA Spanyol; masih dipakai banyak negara
+                           hingga hari ini.</p>
+                    </article>
+
+                    <article class="karya-item">
+                        <p class="karya-jenis">Pesawat penumpang</p>
+                        <h3>N-250 Gatotkaca</h3>
+                        <p>Turboprop rancangan penuh Indonesia, terbang perdana
+                           10 Agustus 1995.</p>
+                    </article>
+
+                    <article class="karya-item">
+                        <p class="karya-jenis">Teori struktur</p>
+                        <h3>Faktor Habibie</h3>
+                        <p>Metode perhitungan perambatan retakan yang membuat desain sayap
+                           lebih ringan sekaligus lebih aman.</p>
+                    </article>
+
+                    <article class="karya-item">
+                        <p class="karya-jenis">Kelembagaan riset</p>
+                        <h3>BPPT &amp; industri strategis</h3>
+                        <p>Membangun ekosistem riset nasional dan mengirim ribuan mahasiswa
+                           Indonesia belajar teknologi ke luar negeri.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KUTIPAN ===== -->
+        <section class="kutipan">
+            <blockquote>
+                <p>&ldquo;Ilmu pengetahuan tanpa agama buta, agama tanpa ilmu pengetahuan lumpuh.&rdquo;</p>
+                <cite>B.&thinsp;J. Habibie</cite>
+            </blockquote>
+        </section>
+
+        <!-- ===== AJAKAN AKHIR ===== -->
+        <section class="ajakan">
+            <h2>Rekam jejak lengkapnya ada di CV</h2>
+            <p>Pendidikan, pengalaman, keahlian, dan penghargaan dalam satu halaman.</p>
+            <a href="cv.html" class="tombol">Buka Curriculum Vitae</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-isi">
+            <p>Praktikum Modul 1 &mdash; Pemrograman Web 2026 &middot; Kelompok A01</p>
+            <p>HTML &amp; CSS native, tanpa framework</p>
+        </div>
+    </footer>
+
+</body>
+</html>
