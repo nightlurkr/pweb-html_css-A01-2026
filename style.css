@@ -532,3 +532,219 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
 }
+
+/* ==========================================================
+   14. HALAMAN CV — kepala + tab interaktif
+   ========================================================== */
+
+/* ---------- Kepala CV ---------- */
+
+.cv-kepala {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 84px 24px 0;
+}
+
+.cv-kepala h1 {
+    margin: 0 0 16px;
+    font-size: 2.6rem;
+}
+
+.cv-pengantar {
+    margin: 0 0 24px;
+    max-width: 62ch;
+    font-size: 1.05rem;
+    color: var(--redup);
+}
+
+.cv-kontak {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;                   /* [REQ: FLEX] */
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.92rem;
+    color: var(--redup);
+}
+
+.cv-kontak a { font-weight: 600; }
+
+
+/* ---------- Area tab ---------- */
+
+.cv-tab-area {
+    max-width: var(--lebar);
+    margin: 0 auto;
+    padding: 40px 24px 0;
+}
+
+.cv-tab-bingkai {
+    background-color: var(--kaca);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--kaca-tepi);
+    border-radius: var(--radius);
+    box-shadow: var(--bayang);
+    overflow: hidden;
+}
+
+.cv-tab-list {
+    display: flex;                   /* [REQ: FLEX] daftar tombol tab sejajar */
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 14px 18px 0;
+    border-bottom: 1px solid var(--garis);
+}
+
+.cv-tab {
+    position: relative;              /* [REQ: POSITION] induk garis penanda aktif */
+    padding: 12px 18px;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--redup);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--jeda);
+}
+
+/* [REQ: PSEUDO-CLASS] :hover */
+.cv-tab:hover { color: var(--tinta); }
+
+/* [REQ: PSEUDO-CLASS] [aria-selected="true"] — tab yang sedang aktif */
+.cv-tab[aria-selected="true"] { color: var(--biru); }
+
+.cv-tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;              /* [REQ: POSITION] absolute — garis penanda tab aktif */
+    left: 12px;
+    right: 12px;
+    bottom: -1px;
+    height: 2px;
+    background-color: var(--biru);
+}
+
+.cv-tab:focus-visible {
+    outline: 2px solid var(--biru);
+    outline-offset: 2px;
+}
+
+.cv-panel {
+    padding: 32px 30px 36px;
+}
+
+/* Panel yang tidak aktif disembunyikan lewat atribut [hidden] bawaan HTML */
+
+
+/* ---------- Isi panel: daftar riwayat ---------- */
+
+.cv-daftar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-daftar > li {
+    padding: 18px 0;
+    border-top: 1px solid var(--garis);
+}
+
+/* [REQ: PSEUDO-CLASS] :first-child — item pertama tanpa garis atas */
+.cv-daftar > li:first-child { border-top: none; padding-top: 0; }
+
+.cv-baris-atas {
+    display: flex;                   /* [REQ: FLEX] judul kiri, tahun kanan */
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cv-baris-atas h3 { font-size: 1.05rem; margin: 0; }
+
+.cv-tahun {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--biru);
+    font-variant-numeric: tabular-nums;
+}
+
+.cv-institusi {
+    margin: 4px 0 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--tinta);
+}
+
+.cv-daftar p:not(.cv-institusi) { margin: 0; color: var(--redup); font-size: 0.94rem; }
+
+
+/* ---------- Isi panel: karya ringkas ---------- */
+
+.cv-grid-ringkas {
+    display: grid;                   /* [REQ: GRID] kartu ringkas 2 kolom */
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.cv-kartu-ringkas {
+    padding: 18px 20px;
+    background-color: var(--kaca-pekat);
+    border: 1px solid var(--garis);
+    border-radius: 12px;
+}
+
+.cv-kartu-ringkas h3 { font-size: 1rem; margin: 0 0 6px; }
+
+.cv-kartu-ringkas p { margin: 0; font-size: 0.9rem; color: var(--redup); }
+
+
+/* ---------- Isi panel: penghargaan sederhana ---------- */
+
+.cv-daftar-sederhana {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--redup);
+}
+
+.cv-daftar-sederhana li { padding: 6px 0; }
+.cv-daftar-sederhana strong { color: var(--tinta); }
+
+
+/* ---------- Isi panel: keahlian (tag) ---------- */
+
+.cv-tag-grup {
+    display: flex;                   /* [REQ: FLEX] tag mengalir dan membungkus */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cv-tag {
+    display: inline-block;           /* [REQ: DISPLAY] inline-block */
+    padding: 8px 16px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--biru-tua);
+    background-color: var(--biru-pucat);
+    border: 1px solid rgba(32, 80, 179, 0.22);
+    border-radius: 999px;
+}
+
+
+/* ---------- [REQ: RESPONSIVE] CV di layar sempit ---------- */
+
+@media (max-width: 900px) {
+    .cv-kepala { padding-top: 60px; }
+    .cv-grid-ringkas { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .cv-kepala h1 { font-size: 2rem; }
+    .cv-tab-list { gap: 2px; }
+    .cv-tab { padding: 10px 12px; font-size: 0.86rem; }
+    .cv-panel { padding: 24px 18px 28px; }
+    .cv-baris-atas { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
