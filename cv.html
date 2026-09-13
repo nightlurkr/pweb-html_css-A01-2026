@@ -8,67 +8,80 @@
 </head>
 <body>
 
+    <!-- NAVBAR: position sticky + display flex -->
     <header class="navbar">
         <div class="navbar-isi">
-            <a href="index.html" class="logo">B.&thinsp;J.&nbsp;Habibie</a>
+            <a href="index.html" class="logo">B.J. Habibie</a>
 
             <nav>
                 <ul class="menu">
                     <li><a href="index.html#tentang">Tentang</a></li>
                     <li><a href="index.html#perjalanan">Perjalanan</a></li>
                     <li><a href="index.html#karya">Karya</a></li>
-                    <li><a href="cv.html" class="menu-cv" aria-current="page">CV</a></li>
+                    <li><a href="cv.html" class="menu-cv">CV</a></li>
                 </ul>
             </nav>
-            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Aktifkan mode gelap" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-text">Mode gelap</span></button>
+
+            <button class="tombol-tema" type="button" id="tombol-tema">Mode gelap</button>
         </div>
     </header>
 
     <main>
 
-        <!-- ===== KEPALA CV ===== -->
+        <!-- KEPALA CV: foto + deskripsi karakter -->
         <section class="cv-kepala">
             <p class="label">Curriculum Vitae</p>
-            <h1>Bacharuddin Jusuf Habibie</h1>
-            <p class="cv-pengantar">
-                [Bacharuddin Jusuf Habibie (B.J. Habibie) adalah insinyur
-                dan teknokrat Indonesia yang berperan besar dalam pengembangan industri dirgantara
-                nasional melalui IPTN serta pernah menjabat sebagai Menteri Riset dan Teknologi.
-                Ia kemudian menjadi Presiden Republik Indonesia ke-3 pada 1998–1999 dan dikenal sebagai tokoh
-                penting dalam perkembangan teknologi, reformasi, dan demokratisasi Indonesia.]
-            </p>
 
-            <ul class="cv-kontak">
-                <li>habibie@gmail.com]</li>
-                <li>Indonesia</li>
-                <li><a href="index.html">← kembali ke profil</a></li>
-            </ul>
+            <div class="cv-identitas">
+                <img class="cv-foto" src="img/habibie.jpg" alt="Potret B.J. Habibie"
+                     width="150" height="150">
+
+                <div>
+                    <h1>Bacharuddin Jusuf Habibie</h1>
+                    <p class="cv-pengantar">
+                        Insinyur penerbangan dengan ketelitian seorang ilmuwan dan kegigihan
+                        seorang pendidik. Dikenal teliti pada detail perhitungan, keras kepala
+                        dalam mempertahankan gagasan yang ia yakini, sekaligus hangat dan mudah
+                        bersemangat saat menjelaskan teknologi kepada siapa pun. Menghabiskan
+                        sembilan tahun di industri dirgantara Jerman sebelum pulang membangun
+                        industri pesawat terbang Indonesia, lalu memimpin negaranya melewati
+                        masa transisi paling genting dalam sejarah modernnya.
+                    </p>
+
+                    <ul class="cv-kontak">
+                        <li>Parepare, 25 Juni 1936</li>
+                        <li>Presiden ke-3 Republik Indonesia</li>
+                        <li><a href="index.html">&larr; kembali ke profil</a></li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <!-- ===== CV TAB: interaktif ===== -->
-        <section class="cv-tab-area" aria-label="Isi CV">
+        <!-- ISI CV: tab interaktif -->
+        <section class="cv-tab-area">
+            <h2>Rekam jejak</h2>
 
             <div class="cv-tab-bingkai">
 
                 <!-- Daftar tab -->
-                <div class="cv-tab-list" role="tablist" aria-label="Bagian CV">
-                    <button class="cv-tab" role="tab" id="tab-pendidikan"
+                <div class="cv-tab-list" role="tablist">
+                    <button class="cv-tab aktif" role="tab" type="button" id="tab-pendidikan"
                             aria-controls="panel-pendidikan" aria-selected="true">
                         Pendidikan
                     </button>
-                    <button class="cv-tab" role="tab" id="tab-karier"
+                    <button class="cv-tab" role="tab" type="button" id="tab-karier"
                             aria-controls="panel-karier" aria-selected="false" tabindex="-1">
                         Karier
                     </button>
-                    <button class="cv-tab" role="tab" id="tab-karya"
+                    <button class="cv-tab" role="tab" type="button" id="tab-karya"
                             aria-controls="panel-karya" aria-selected="false" tabindex="-1">
-                        Karya &amp; Paten
+                        Karya
                     </button>
-                    <button class="cv-tab" role="tab" id="tab-penghargaan"
+                    <button class="cv-tab" role="tab" type="button" id="tab-penghargaan"
                             aria-controls="panel-penghargaan" aria-selected="false" tabindex="-1">
                         Penghargaan
                     </button>
-                    <button class="cv-tab" role="tab" id="tab-keahlian"
+                    <button class="cv-tab" role="tab" type="button" id="tab-keahlian"
                             aria-controls="panel-keahlian" aria-selected="false" tabindex="-1">
                         Keahlian
                     </button>
@@ -80,19 +93,29 @@
                     <ol class="cv-daftar">
                         <li>
                             <div class="cv-baris-atas">
-                                <h3>[Placeholder] Dr.-Ing., Teknik Penerbangan</h3>
+                                <h3>Doktor-Ingenieur (Dr.-Ing.), Teknik Penerbangan</h3>
                                 <span class="cv-tahun">1965</span>
                             </div>
-                            <p class="cv-institusi">Technische Hochschule Aachen, Jerman</p>
-                            <p>Lulus <em>summa cum laude</em>. [Placeholder: judul disertasi / fokus riset.]</p>
+                            <p class="cv-institusi">RWTH Aachen, Jerman</p>
+                            <p>Lulus dengan predikat <em>summa cum laude</em>. Riset disertasinya
+                               berkutat pada konstruksi dan perilaku struktur pesawat terbang.</p>
                         </li>
                         <li>
                             <div class="cv-baris-atas">
-                                <h3>[Placeholder] Sarjana Teknik Mesin</h3>
-                                <span class="cv-tahun">1955&ndash;1960</span>
+                                <h3>Diplom-Ingenieur (Dipl.-Ing.), Teknik Penerbangan</h3>
+                                <span class="cv-tahun">1960</span>
                             </div>
-                            <p class="cv-institusi">Institut Teknologi Bandung / RWTH Aachen</p>
-                            <p>[Placeholder: detail tambahan pendidikan awal.]</p>
+                            <p class="cv-institusi">RWTH Aachen, Jerman</p>
+                            <p>Menempuh studi sambil bekerja untuk membiayai kuliahnya sendiri.</p>
+                        </li>
+                        <li>
+                            <div class="cv-baris-atas">
+                                <h3>Pendidikan tinggi awal</h3>
+                                <span class="cv-tahun">1950-an</span>
+                            </div>
+                            <p class="cv-institusi">Institut Teknologi Bandung &middot; Technische Hogeschool Delft</p>
+                            <p>Memulai kuliah teknik di Bandung, sempat melanjutkan ke Delft,
+                               lalu pindah ke Jerman.</p>
                         </li>
                     </ol>
                 </div>
@@ -103,50 +126,84 @@
                     <ol class="cv-daftar">
                         <li>
                             <div class="cv-baris-atas">
-                                <h3>[Placeholder] Presiden ke-3 Republik Indonesia</h3>
+                                <h3>Presiden ke-3 Republik Indonesia</h3>
                                 <span class="cv-tahun">1998&ndash;1999</span>
                             </div>
                             <p class="cv-institusi">Republik Indonesia</p>
-                            <p>[Placeholder: pencapaian utama masa jabatan.]</p>
+                            <p>Menjabat 21 Mei 1998 &ndash; 20 Oktober 1999. Membuka kebebasan pers,
+                               membebaskan pendirian partai politik, memberi independensi kepada
+                               Bank Indonesia, dan menyelenggarakan pemilu bebas pertama pasca-Orde Baru.</p>
                         </li>
                         <li>
                             <div class="cv-baris-atas">
-                                <h3>[Placeholder] Menteri Riset dan Teknologi</h3>
+                                <h3>Wakil Presiden ke-7 Republik Indonesia</h3>
+                                <span class="cv-tahun">1998</span>
+                            </div>
+                            <p class="cv-institusi">Republik Indonesia</p>
+                            <p>Menjabat 11 Maret &ndash; 21 Mei 1998.</p>
+                        </li>
+                        <li>
+                            <div class="cv-baris-atas">
+                                <h3>Menteri Negara Riset dan Teknologi</h3>
                                 <span class="cv-tahun">1978&ndash;1998</span>
                             </div>
-                            <p class="cv-institusi">Kabinet Republik Indonesia</p>
-                            <p>[Placeholder: ringkasan tanggung jawab dan capaian.]</p>
+                            <p class="cv-institusi">Kabinet Republik Indonesia &middot; merangkap Ketua BPPT</p>
+                            <p>Dua puluh tahun memimpin arah riset nasional dan mengirim ribuan
+                               mahasiswa Indonesia menimba ilmu teknologi ke luar negeri.</p>
                         </li>
                         <li>
                             <div class="cv-baris-atas">
-                                <h3>[Placeholder] Wakil Presiden Teknologi</h3>
-                                <span class="cv-tahun">1974&ndash;1978</span>
+                                <h3>Direktur Utama IPTN</h3>
+                                <span class="cv-tahun">1976&ndash;1998</span>
                             </div>
-                            <p class="cv-institusi">Messerschmitt-B&ouml;lkow-Blohm, Jerman</p>
-                            <p>[Placeholder: deskripsi peran.]</p>
+                            <p class="cv-institusi">Industri Pesawat Terbang Nusantara, Bandung</p>
+                            <p>Membangun industri pesawat terbang nasional dari nol hingga mampu
+                               merancang dan menerbangkan pesawat buatan sendiri.</p>
+                        </li>
+                        <li>
+                            <div class="cv-baris-atas">
+                                <h3>Asisten khusus bidang teknologi tinggi</h3>
+                                <span class="cv-tahun">1974&ndash;1976</span>
+                            </div>
+                            <p class="cv-institusi">Pertamina, Jakarta</p>
+                            <p>Merintis lembaga riset dan industri strategis setelah dipanggil
+                               pulang ke Indonesia.</p>
+                        </li>
+                        <li>
+                            <div class="cv-baris-atas">
+                                <h3>Riset dan pengembangan struktur pesawat</h3>
+                                <span class="cv-tahun">1965&ndash;1974</span>
+                            </div>
+                            <p class="cv-institusi">Messerschmitt-B&ouml;lkow-Blohm, Hamburg, Jerman</p>
+                            <p>Mengembangkan teori termodinamika, konstruksi, dan aerodinamika;
+                               ikut berkontribusi pada pengembangan Airbus A-300B.</p>
                         </li>
                     </ol>
                 </div>
 
-                <!-- Panel: Karya & Paten -->
+                <!-- Panel: Karya -->
                 <div class="cv-panel" role="tabpanel" id="panel-karya"
                      aria-labelledby="tab-karya" hidden>
                     <div class="cv-grid-ringkas">
                         <div class="cv-kartu-ringkas">
-                            <h3>[Placeholder] N-250 Gatotkaca</h3>
-                            <p>Ringkasan singkat kontribusi &mdash; ganti dengan detail asli.</p>
+                            <h3>N-250 Gatotkaca</h3>
+                            <p>Pesawat penumpang turboprop rancangan penuh Indonesia.
+                               Terbang perdana 10 Agustus 1995.</p>
                         </div>
                         <div class="cv-kartu-ringkas">
-                            <h3>[Placeholder] CN-235</h3>
-                            <p>Ringkasan singkat kontribusi &mdash; ganti dengan detail asli.</p>
+                            <h3>CN-235</h3>
+                            <p>Pesawat angkut serbaguna hasil kerja sama IPTN dengan CASA Spanyol,
+                               dioperasikan di berbagai negara.</p>
                         </div>
                         <div class="cv-kartu-ringkas">
-                            <h3>[Placeholder] Faktor Habibie</h3>
-                            <p>Ringkasan singkat kontribusi &mdash; ganti dengan detail asli.</p>
+                            <h3>Faktor Habibie</h3>
+                            <p>Metode perhitungan perambatan retakan pada struktur pesawat, yang
+                               memberinya julukan <em>Mr. Crack</em>.</p>
                         </div>
                         <div class="cv-kartu-ringkas">
-                            <h3>[Placeholder] Publikasi &amp; Paten</h3>
-                            <p>Jumlah dan lingkup &mdash; ganti dengan detail asli.</p>
+                            <h3>Airbus A-300B</h3>
+                            <p>Ikut berkontribusi pada pengembangan pesawat ini selama bekerja
+                               di Messerschmitt-B&ouml;lkow-Blohm.</p>
                         </div>
                     </div>
                 </div>
@@ -155,9 +212,18 @@
                 <div class="cv-panel" role="tabpanel" id="panel-penghargaan"
                      aria-labelledby="tab-penghargaan" hidden>
                     <ul class="cv-daftar-sederhana">
-                        <li><strong>[Placeholder Tahun]</strong> — Nama penghargaan / gelar kehormatan.</li>
-                        <li><strong>[Placeholder Tahun]</strong> — Nama penghargaan / gelar kehormatan.</li>
-                        <li><strong>[Placeholder Tahun]</strong> — Nama penghargaan / gelar kehormatan.</li>
+                        <li><strong>1982</strong> &mdash; Bintang Mahaputera, Republik Indonesia
+                            (kelas I menyusul pada 1998).</li>
+                        <li><strong>1990</strong> &mdash; <em>Fellow of the Royal Academy of
+                            Engineering</em> (FREng), Inggris.</li>
+                        <li><strong>1993</strong> &mdash; <em>Honorary Fellow of the Royal
+                            Aeronautical Society</em> (HonFRAeS), Inggris.</li>
+                        <li><strong>1997</strong> &mdash; <em>L&eacute;gion d&rsquo;honneur</em>
+                            tingkat <em>Grand Officier</em>, Prancis.</li>
+                        <li><strong>1997</strong> &mdash; <em>Bundesverdienstkreuz</em>
+                            (Grand Cross kelas I), Republik Federal Jerman.</li>
+                        <li><strong>1998</strong> &mdash; <em>Order of the Paulownia Flowers</em>
+                            (Grand Cordon), Jepang.</li>
                     </ul>
                 </div>
 
@@ -165,18 +231,23 @@
                 <div class="cv-panel" role="tabpanel" id="panel-keahlian"
                      aria-labelledby="tab-keahlian" hidden>
                     <div class="cv-tag-grup">
-                        <span class="cv-tag">[Placeholder] Rekayasa Struktur Pesawat</span>
-                        <span class="cv-tag">[Placeholder] Manajemen Riset</span>
-                        <span class="cv-tag">[Placeholder] Kebijakan Teknologi</span>
-                        <span class="cv-tag">[Placeholder] Kepemimpinan Publik</span>
-                        <span class="cv-tag">[Placeholder] Bahasa: ...</span>
+                        <span class="cv-tag">Konstruksi &amp; struktur pesawat</span>
+                        <span class="cv-tag">Aerodinamika</span>
+                        <span class="cv-tag">Termodinamika</span>
+                        <span class="cv-tag">Analisis perambatan retakan</span>
+                        <span class="cv-tag">Manajemen industri dirgantara</span>
+                        <span class="cv-tag">Kebijakan riset &amp; teknologi</span>
+                        <span class="cv-tag">Bahasa: Indonesia</span>
+                        <span class="cv-tag">Bahasa: Jerman</span>
+                        <span class="cv-tag">Bahasa: Inggris</span>
+                        <span class="cv-tag">Bahasa: Belanda</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ===== AJAKAN AKHIR ===== -->
+        <!-- AJAKAN AKHIR -->
         <section class="ajakan">
             <h2>Ingin tahu lebih banyak?</h2>
             <p>Kembali ke halaman profil untuk kisah lengkapnya.</p>
@@ -185,56 +256,53 @@
 
     </main>
 
-    <script>
-        (function () {
-            const root=document.documentElement, toggle=document.getElementById('theme-toggle');
-            if(!toggle) return;
-            const icon=toggle.querySelector('.theme-toggle-icon'), text=toggle.querySelector('.theme-toggle-text');
-            function setTheme(mode){ const dark=mode==='dark'; root.dataset.theme=dark?'dark':'light'; toggle.setAttribute('aria-pressed',dark?'true':'false'); toggle.setAttribute('aria-label',dark?'Aktifkan mode terang':'Aktifkan mode gelap'); icon.textContent=dark?'☀':'☾'; text.textContent=dark?'Mode terang':'Mode gelap'; }
-            const saved=localStorage.getItem('theme');
-            setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-            toggle.addEventListener('click',()=>{ const next=root.dataset.theme==='dark'?'light':'dark'; localStorage.setItem('theme',next); setTheme(next); });
-        })();
-    </script>
-    <script>
-        // Tab CV: klik tombol tab -> tampilkan panel terkait, sembunyikan lainnya.
-        // Ditulis vanilla JS, tanpa library, sesuai batasan tugas.
-        (function () {
-            const tabs = document.querySelectorAll('.cv-tab');
-            const panels = document.querySelectorAll('.cv-panel');
+    <footer class="footer">
+        <div class="footer-isi">
+            <p>Praktikum Modul 1 &mdash; Pemrograman Web 2026 &middot; Kelompok A01</p>
+            <p>HTML &amp; CSS native, tanpa framework</p>
+        </div>
+    </footer>
 
-            function aktifkan(tab) {
-                tabs.forEach(function (t) {
-                    const aktif = t === tab;
-                    t.setAttribute('aria-selected', aktif ? 'true' : 'false');
-                    t.tabIndex = aktif ? 0 : -1;
-                });
-                panels.forEach(function (panel) {
-                    panel.hidden = panel.id !== tab.getAttribute('aria-controls');
-                });
+    <script>
+        // Fitur tambahan 1: tombol mode gelap.
+        // Menambah atau menghapus class "gelap" pada <body>.
+        var tombolTema = document.getElementById("tombol-tema");
+
+        tombolTema.addEventListener("click", function () {
+            document.body.classList.toggle("gelap");
+
+            if (document.body.classList.contains("gelap")) {
+                tombolTema.textContent = "Mode terang";
+            } else {
+                tombolTema.textContent = "Mode gelap";
+            }
+        });
+    </script>
+
+    <script>
+        // Fitur tambahan 2: tab CV.
+        // Tombol yang diklik diberi class "aktif", panel lain disembunyikan.
+        var semuaTab = document.querySelectorAll(".cv-tab");
+        var semuaPanel = document.querySelectorAll(".cv-panel");
+
+        function aktifkanTab(tab) {
+            for (var i = 0; i < semuaTab.length; i++) {
+                var iniAktif = (semuaTab[i] === tab);
+                semuaTab[i].classList.toggle("aktif", iniAktif);
+                semuaTab[i].setAttribute("aria-selected", iniAktif ? "true" : "false");
+                semuaTab[i].tabIndex = iniAktif ? 0 : -1;
             }
 
-            tabs.forEach(function (tab, index) {
-                tab.addEventListener('click', function () {
-                    aktifkan(tab);
-                });
+            for (var j = 0; j < semuaPanel.length; j++) {
+                semuaPanel[j].hidden = (semuaPanel[j].id !== tab.getAttribute("aria-controls"));
+            }
+        }
 
-                // Navigasi panah kiri/kanan antar tab (aksesibilitas keyboard)
-                tab.addEventListener('keydown', function (e) {
-                    let target = null;
-                    if (e.key === 'ArrowRight') {
-                        target = tabs[(index + 1) % tabs.length];
-                    } else if (e.key === 'ArrowLeft') {
-                        target = tabs[(index - 1 + tabs.length) % tabs.length];
-                    }
-                    if (target) {
-                        e.preventDefault();
-                        target.focus();
-                        aktifkan(target);
-                    }
-                });
+        for (var k = 0; k < semuaTab.length; k++) {
+            semuaTab[k].addEventListener("click", function () {
+                aktifkanTab(this);
             });
-        })();
+        }
     </script>
 
 </body>

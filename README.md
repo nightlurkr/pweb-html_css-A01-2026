@@ -1,53 +1,58 @@
-# Portofolio & Creative CV — Prof. Dr.-Ing. B.J. Habibie
+# Portfolio & Creative CV — B.J. Habibie
 
-Praktikum Modul 1 (HTML & CSS Native) &mdash; Pemrograman Web 2026  
-Departemen Teknologi Informasi, Institut Teknologi Sepuluh Nopember (ITS)  
+Praktikum Modul 1 (HTML & CSS) — Pemrograman Web 2026
+Departemen Teknologi Informasi, Institut Teknologi Sepuluh Nopember
 Kelompok **A01**
 
----
+## Tentang
 
-## Tentang Proyek
+Website portofolio dan Creative CV untuk **Bacharuddin Jusuf Habibie** (1936–2019) —
+insinyur penerbangan, ilmuwan, dan Presiden ke-3 Republik Indonesia.
 
-Website portofolio interaktif dan **Creative CV** untuk mengenang serta mempelajari rekam jejak **Bacharuddin Jusuf Habibie** (1936–2019) &mdash; ilmuwan aeronautika penemu *Habibie Factor*, teknokrat perintis kedirgantaraan Indonesia, dan Presiden ke-3 Republik Indonesia.
+## Anggota Kelompok
 
----
-
-## Anggota Kelompok A01
-
-| Nama | NRP | Peran & Bagian yang Dikerjakan |
+| Nama | NRP | Bagian yang dikerjakan |
 |---|---|---|
-| Ryan Adya Purwanto | 5027231046 | Landing page, struktur repo & rancangan arsitektur CSS |
-| George David Nebore | 5027221043 | Desain & implementasi Creative CV (`cv.html`), deskripsi karakter & portofolio |
-| Kharisma Fahrun Nisa' | 5027231086 | Optimasi Responsive (PC/Tab/HP), fitur tambahan |
+| Kharisma Fahrun Nisa' | 5027231086 | Responsive & pengujian lintas ukuran layar, fitur tambahan |
+| Ryan Adya Purwanto | 5027231046 | Landing page (`index.html`), styling (`style.css`), struktur repo |
+| George David Nebore | 5027221043 | Halaman Creative CV (`cv.html`) |
 
----
+## Cara Menjalankan
 
-##  Fitur Tambahan
+Tidak butuh instalasi apa pun.
 
-1. **Toggle Mode**:
-   - Toggle di navbar untuk berpindah antara tema terang dan tema gelap.
-   - Tersimpan otomatis di `localStorage` peramban.
----
+1. Clone repository ini
+2. Buka `index.html` di browser
 
-## Struktur Direktori
+Atau gunakan ekstensi **Live Server** di VS Code: klik kanan `index.html` →
+_Open with Live Server_.
 
-```text
+## Struktur File
+
+```
 .
-├── index.html       # Landing page profil & portofolio utama
-├── cv.html          # Halaman Creative CV B.J. Habibie
-├── style.css        # Seluruh styling native (dipakai kedua halaman)
-├── README.md        # Dokumentasi praktikum kelompok A01
-└── img/
-    ├── habibie.jpg  # Foto resmi B.J. Habibie resolusi tinggi
-    └── habibie.svg  # Cadangan vektor ikon
+├── index.html      # Landing page
+├── cv.html         # Halaman Creative CV
+├── style.css       # Seluruh styling (dipakai kedua halaman)
+├── img/            # Aset gambar
 ```
 
----
+## Pemenuhan Requirement
 
-##  Cara Menjalankan
+| Requirement | Di mana |
+|---|---|
+| Landing page | `index.html` |
+| Call to action ke CV | Tombol "Lihat CV" di hero, menu navbar, dan section ajakan akhir |
+| Creative CV | `cv.html` — foto, deskripsi karakter, karier, pendidikan, keahlian, penghargaan |
+| Multi page | 2 halaman: `index.html` dan `cv.html` |
+| Pseudo-class | `:hover`, `:focus`, `:active` |
+| Position | `sticky` + `z-index` pada navbar |
+| Display | `block`, `inline-block`, `flex`, `grid` |
+| Flex | Navbar, menu, tombol hero, identitas CV, baris CV, footer |
+| Grid | Hero, statistik, kerangka bagian, linimasa, kartu karya, kartu CV |
+| Responsive | Media query `900px` (tablet) dan `600px` (HP) |
 
-Proyek ini tidak memerlukan instalasi dependensi, compiler, maupun server backend:
+Setiap blok CSS yang memenuhi requirement di atas ditandai komentar `[REQ: ...]`
+di dalam `style.css` agar mudah ditelusuri. Seluruh properti CSS yang dipakai
+diambil dari materi Modul 1, tanpa custom property, gradien, atau efek di luar modul.
 
-1. Buka folder proyek di teks editor.
-2. Buka berkas `index.html` langsung dengan klik dua kali untuk membukanya di peramban favorit Anda.
-3. Atau gunakan ekstensi **Live Server** di VS Code: klik kanan `index.html` &rarr; *Open with Live Server*.

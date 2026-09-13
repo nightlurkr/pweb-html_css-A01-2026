@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    
+    <!-- NAVBAR: position sticky + display flex -->
     <header class="navbar">
         <div class="navbar-isi">
-            <a href="#beranda" class="logo">B.&thinsp;J.&nbsp;Habibie</a>
+            <a href="#beranda" class="logo">B.J. Habibie</a>
 
             <nav>
                 <ul class="menu">
@@ -21,13 +21,14 @@
                     <li><a href="cv.html" class="menu-cv">CV</a></li>
                 </ul>
             </nav>
-            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Aktifkan mode gelap" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-text">Mode gelap</span></button>
+
+            <button class="tombol-tema" type="button" id="tombol-tema">Mode gelap</button>
         </div>
     </header>
 
     <main>
 
-        <!--HERO-->
+        <!-- HERO -->
         <section id="beranda" class="hero">
             <div class="hero-teks">
                 <p class="label">1936&ndash;2019 &middot; Insinyur &amp; Negarawan</p>
@@ -38,25 +39,26 @@
                     tersulit dalam sejarahnya.
                 </p>
 
-                <!--Call to action: mengarah ke halaman CV-->
+                <!-- Call to action: mengarah ke halaman CV -->
                 <div class="hero-tombol">
                     <a href="cv.html" class="tombol">Lihat CV</a>
-                    <a href="#karya" class="tautan-panah">Jelajahi karya</a>
+                    <a href="#karya" class="tautan-panah">Jelajahi karya &darr;</a>
                 </div>
             </div>
 
             <figure class="hero-foto">
-                <!-- Ganti src di bawah dengan foto asli: img/habibie.jpg -->
                 <img src="img/habibie.jpg" alt="Potret B.J. Habibie" width="420" height="520">
-                <figcaption>Dipl.-Ing. (1960), Dr.-Ing. <em>summa cum laude</em> (1965) &mdash; RWTH Aachen</figcaption>
+                <figcaption>
+                    Dipl.-Ing. (1960), Dr.-Ing. <em>summa cum laude</em> (1965) &mdash; RWTH Aachen
+                </figcaption>
             </figure>
         </section>
 
-        <!-- ===== STATISTIK: display grid ===== -->
-        <section class="statistik" aria-label="Ringkasan angka">
+        <!-- STATISTIK: display grid -->
+        <section class="statistik">
             <div class="stat">
-                <strong>46</strong>
-                <span>paten &amp; publikasi teknik penerbangan</span>
+                <strong>1965</strong>
+                <span>Dr.-Ing. <em>summa cum laude</em>, RWTH Aachen</span>
             </div>
             <div class="stat">
                 <strong>1995</strong>
@@ -72,7 +74,7 @@
             </div>
         </section>
 
-        <!-- ===== TENTANG: grid label | isi ===== -->
+        <!-- TENTANG -->
         <section id="tentang" class="bagian">
             <p class="label">Tentang</p>
             <div class="bagian-isi">
@@ -84,20 +86,21 @@
                     <em>summa cum laude</em> pada 1965.
                 </p>
                 <p>
-                    Di Messerschmitt-B&ouml;lkow-Blohm ia menanjak hingga wakil presiden bidang
-                    teknologi &mdash; posisi yang nyaris tak pernah dipegang orang asing.
+                    Selama sembilan tahun di Messerschmitt-B&ouml;lkow-Blohm, Hamburg (1965&ndash;1974),
+                    ia menangani riset struktur pesawat dan ikut menggarap pengembangan Airbus A-300B.
                     Temuannya tentang perambatan retakan pada struktur pesawat dikenal sebagai
-                    <strong>Faktor Habibie</strong> dan memberinya julukan <em>Mr.&nbsp;Crack</em>.
+                    <strong>Faktor Habibie</strong> dan memberinya julukan <em>Mr. Crack</em>.
                 </p>
                 <p>
-                    Ia pulang pada 1974 atas panggilan negara: memimpin BPPT, menjabat Menteri
-                    Riset dan Teknologi selama dua dekade, lalu menjadi Presiden ke-3 Republik
-                    Indonesia pada 21 Mei 1998.
+                    Ia pulang pada 1974 atas panggilan negara: merintis industri strategis,
+                    memimpin IPTN sejak 1976, lalu menjabat Menteri Riset dan Teknologi
+                    sekaligus Ketua BPPT selama dua dekade, sebelum menjadi Presiden ke-3
+                    Republik Indonesia pada 21 Mei 1998.
                 </p>
             </div>
         </section>
 
-        <!-- ===== PERJALANAN: linimasa grid tahun | isi ===== -->
+        <!-- PERJALANAN -->
         <section id="perjalanan" class="bagian">
             <p class="label">Perjalanan</p>
             <div class="bagian-isi">
@@ -122,7 +125,7 @@
                         <span class="tahun">1974</span>
                         <div>
                             <h3>Kembali ke Indonesia</h3>
-                            <p>Memimpin pengembangan industri strategis dan teknologi nasional.</p>
+                            <p>Merintis industri strategis; memimpin IPTN mulai 1976.</p>
                         </div>
                     </li>
                     <li>
@@ -150,7 +153,7 @@
             </div>
         </section>
 
-        <!-- ===== KARYA: grid kartu berbagi garis ===== -->
+        <!-- KARYA -->
         <section id="karya" class="bagian">
             <p class="label">Karya</p>
             <div class="bagian-isi">
@@ -188,33 +191,46 @@
             </div>
         </section>
 
-        <!-- ===== KUTIPAN ===== -->
+        <!-- KUTIPAN -->
         <section class="kutipan">
             <blockquote>
                 <p>&ldquo;Ilmu pengetahuan tanpa agama buta, agama tanpa ilmu pengetahuan lumpuh.&rdquo;</p>
-                <cite>B.&thinsp;J. Habibie</cite>
+                <cite>B.J. Habibie</cite>
             </blockquote>
         </section>
 
-        <!-- ===== AJAKAN AKHIR ===== -->
+        <!-- AJAKAN AKHIR -->
         <section class="ajakan">
             <h2>Rekam jejak lengkapnya ada di CV</h2>
             <p>Pendidikan, pengalaman, keahlian, dan penghargaan dalam satu halaman.</p>
-            <a href="cv.html" class="tombol">Buka Curriculum Vitae</a>
+            <a href="cv.html" class="tombol">Buka CV</a>
         </section>
 
     </main>
 
+    <footer class="footer">
+        <div class="footer-isi">
+            <p>Praktikum Modul 1 &mdash; Pemrograman Web 2026 &middot; Kelompok A01</p>
+            <p>HTML &amp; CSS</p>
+        </div>
+    </footer>
+
     <script>
-        (function () {
-            const root=document.documentElement, toggle=document.getElementById('theme-toggle');
-            if(!toggle) return;
-            const icon=toggle.querySelector('.theme-toggle-icon'), text=toggle.querySelector('.theme-toggle-text');
-            function setTheme(mode){ const dark=mode==='dark'; root.dataset.theme=dark?'dark':'light'; toggle.setAttribute('aria-pressed',dark?'true':'false'); toggle.setAttribute('aria-label',dark?'Aktifkan mode terang':'Aktifkan mode gelap'); icon.textContent=dark?'☀':'☾'; text.textContent=dark?'Mode terang':'Mode gelap'; }
-            const saved=localStorage.getItem('theme');
-            setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-            toggle.addEventListener('click',()=>{ const next=root.dataset.theme==='dark'?'light':'dark'; localStorage.setItem('theme',next); setTheme(next); });
-        })();
+        // Fitur tambahan: tombol mode gelap.
+        // Menambah atau menghapus class "gelap" pada <body>,
+        // sisanya diatur oleh CSS bagian 12.
+        var tombolTema = document.getElementById("tombol-tema");
+
+        tombolTema.addEventListener("click", function () {
+            document.body.classList.toggle("gelap");
+
+            if (document.body.classList.contains("gelap")) {
+                tombolTema.textContent = "Mode terang";
+            } else {
+                tombolTema.textContent = "Mode gelap";
+            }
+        });
     </script>
+
 </body>
 </html>
