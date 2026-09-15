@@ -29,7 +29,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* focus — penanda saat dipilih lewat tombol Tab */
+/* focus penanda saat dipilih lewat tombol Tab */
 a:focus,
 button:focus {
     outline: 2px solid #1f4fa8;
@@ -211,7 +211,7 @@ button:focus {
     background-color: #ffffff;
     border-top: 1px solid #d7dfe8;
     border-bottom: 1px solid #d7dfe8;
-    display: grid;                   /* [REQ: GRID] empat kolom sama lebar */
+    display: grid;                  
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
 }
@@ -222,7 +222,7 @@ button:focus {
 }
 
 .stat strong {
-    display: block;                  /* [REQ: DISPLAY] block — angka pindah ke barisnya sendiri */
+    display: block;                  
     font-family: Georgia, serif;
     font-size: 30px;
     color: #16263f;
@@ -234,13 +234,13 @@ button:focus {
 }
 
 
-/* ---------- 6. Kerangka tiap bagian ---------- */
+/* ---------- 6. Tentang ---------- */
 
 .bagian {
     max-width: 1000px;
     margin: 0 auto;
     padding: 64px 24px 0 24px;
-    display: grid;                   /* [REQ: GRID] kolom label | kolom isi */
+    display: grid;                 
     grid-template-columns: 180px 1fr;
     gap: 40px;
     align-items: start;
@@ -273,12 +273,12 @@ button:focus {
 .linimasa li {
     padding: 18px 0;
     border-top: 1px solid #d7dfe8;
-    display: grid;                   /* [REQ: GRID] kolom tahun | kolom isi */
+    display: grid;                 
     grid-template-columns: 80px 1fr;
     gap: 18px;
 }
 
-.linimasa li:hover {                 /* [REQ: PSEUDO-CLASS] :hover — baris disorot */
+.linimasa li:hover {                
     background-color: #e3ebf6;
 }
 
