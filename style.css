@@ -1,20 +1,3 @@
-/* ==========================================================
-   style.css — Portfolio & CV B.J. Habibie
-   Praktikum Modul 1 PemWeb 2026 — Kelompok A01
-
-   Seluruh properti di file ini diambil dari materi Modul 1:
-   selector class/id, box model, height & width, color,
-   teks & font, pseudo-class, position, z-index, display,
-   flex, grid, dan responsive (media query).
-
-   Penanda requirement untuk demo:
-     [REQ: PSEUDO-CLASS]  [REQ: POSITION]  [REQ: DISPLAY]
-     [REQ: FLEX]          [REQ: GRID]      [REQ: RESPONSIVE]
-   ========================================================== */
-
-
-/* ---------- 1. Dasar halaman ---------- */
-
 body {
     margin: 0;
     padding: 0;
@@ -26,7 +9,7 @@ body {
 }
 
 img {
-    display: block;                  /* [REQ: DISPLAY] block — gambar tidak menyisakan celah bawah */
+    display: block;                 
     max-width: 100%;
 }
 
@@ -42,19 +25,18 @@ a {
     text-decoration: none;
 }
 
-/* [REQ: PSEUDO-CLASS] :hover — semua tautan biasa */
 a:hover {
     text-decoration: underline;
 }
 
-/* [REQ: PSEUDO-CLASS] :focus — penanda saat dipilih lewat tombol Tab */
+/* focus — penanda saat dipilih lewat tombol Tab */
 a:focus,
 button:focus {
     outline: 2px solid #1f4fa8;
     outline-offset: 2px;
 }
 
-/* label kecil huruf kapital, dipakai di beberapa bagian */
+
 .label {
     margin: 0 0 12px 0;
     font-size: 13px;
@@ -68,9 +50,9 @@ button:focus {
 /* ---------- 2. Navbar ---------- */
 
 .navbar {
-    position: sticky;                /* [REQ: POSITION] sticky — menempel di atas saat digulir */
+    position: sticky;               
     top: 0;
-    z-index: 10;                     /* naikkan layer supaya tidak tertimpa isi halaman */
+    z-index: 10;                    
     background-color: #ffffff;
     border-bottom: 1px solid #d7dfe8;
 }
@@ -79,7 +61,7 @@ button:focus {
     max-width: 1000px;
     margin: 0 auto;
     padding: 16px 24px;
-    display: flex;                   /* [REQ: FLEX] nama di kiri, menu di kanan */
+    display: flex;                   
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -96,7 +78,7 @@ button:focus {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;                   /* [REQ: FLEX] item menu berjajar mendatar */
+    display: flex;                   
     align-items: center;
 }
 
@@ -105,14 +87,14 @@ button:focus {
 }
 
 .menu a {
-    display: inline-block;           /* [REQ: DISPLAY] inline-block — bisa diberi padding */
+    display: inline-block;          
     padding: 8px 14px;
     font-size: 15px;
     color: #1b2430;
     border-radius: 6px;
 }
 
-/* [REQ: PSEUDO-CLASS] :hover */
+/* hover */
 .menu a:hover {
     background-color: #e3ebf6;
     color: #1f4fa8;
@@ -124,7 +106,7 @@ button:focus {
     font-weight: bold;
 }
 
-/* tombol mode gelap — fitur tambahan (lihat bagian 12) */
+/* tombol dark mode */
 .tombol-tema {
     margin-left: 10px;
     padding: 8px 14px;
@@ -148,7 +130,7 @@ button:focus {
     max-width: 1000px;
     margin: 0 auto;
     padding: 64px 24px;
-    display: grid;                   /* [REQ: GRID] dua kolom: teks | foto */
+    display: grid;                  
     grid-template-columns: 3fr 2fr;
     gap: 48px;
     align-items: center;
@@ -166,7 +148,7 @@ button:focus {
 }
 
 .hero-tombol {
-    display: flex;                   /* [REQ: FLEX] dua tombol berjajar */
+    display: flex;                   
     flex-wrap: wrap;
     align-items: center;
 }
@@ -195,7 +177,7 @@ button:focus {
 /* ---------- 4. Tombol ---------- */
 
 .tombol {
-    display: inline-block;           /* [REQ: DISPLAY] inline-block — <a> bisa diberi padding */
+    display: inline-block;           
     padding: 13px 26px;
     font-size: 16px;
     font-weight: bold;
@@ -204,7 +186,7 @@ button:focus {
     border-radius: 8px;
 }
 
-/* [REQ: PSEUDO-CLASS] :hover dan :active */
+/* :hover dan :active */
 .tombol:hover {
     background-color: #16397a;
     text-decoration: none;
@@ -322,7 +304,7 @@ button:focus {
 /* ---------- 8. Kartu karya ---------- */
 
 .karya-grid {
-    display: grid;                   /* [REQ: GRID] dua kolom, dua baris */
+    display: grid;                   
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
@@ -334,7 +316,7 @@ button:focus {
     border-radius: 10px;
 }
 
-.karya-item:hover {                  /* [REQ: PSEUDO-CLASS] :hover */
+.karya-item:hover {                 
     border-color: #1f4fa8;
 }
 
@@ -419,7 +401,7 @@ button:focus {
 .footer-isi {
     max-width: 1000px;
     margin: 0 auto;
-    display: flex;                   /* [REQ: FLEX] dua teks di ujung kiri dan kanan */
+    display: flex;                  
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -444,7 +426,7 @@ button:focus {
     font-size: 40px;
 }
 
-/* [REQ: FLEX] foto di kiri, ringkasan di kanan */
+
 .cv-identitas {
     display: flex;
     align-items: center;
@@ -454,7 +436,7 @@ button:focus {
 .cv-foto {
     width: 150px;
     height: 150px;
-    border-radius: 75px;             /* setengah dari lebar = lingkaran penuh */
+    border-radius: 75px;             
     border: 3px solid #ffffff;
 }
 
@@ -467,7 +449,7 @@ button:focus {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;                   /* [REQ: FLEX] */
+    display: flex;              
     flex-wrap: wrap;
     font-size: 15px;
     color: #5b6676;
@@ -497,7 +479,7 @@ button:focus {
 .cv-tab-list {
     padding: 0 10px;
     border-bottom: 1px solid #d7dfe8;
-    display: flex;                   /* [REQ: FLEX] tombol tab berjajar */
+    display: flex;                  
     flex-wrap: wrap;
 }
 
@@ -513,11 +495,11 @@ button:focus {
     cursor: pointer;
 }
 
-.cv-tab:hover {                      /* [REQ: PSEUDO-CLASS] :hover */
+.cv-tab:hover {                     
     color: #1b2430;
 }
 
-/* tab yang sedang aktif — class ditambahkan oleh JavaScript */
+
 .cv-tab.aktif {
     color: #1f4fa8;
     border-bottom: 3px solid #1f4fa8;
@@ -539,7 +521,7 @@ button:focus {
 }
 
 .cv-baris-atas {
-    display: flex;                   /* [REQ: FLEX] judul kiri, tahun kanan */
+    display: flex;                  
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
@@ -569,7 +551,7 @@ button:focus {
 }
 
 .cv-grid-ringkas {
-    display: grid;                   /* [REQ: GRID] kartu karya di halaman CV */
+    display: grid;                  
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
 }
@@ -603,7 +585,7 @@ button:focus {
 }
 
 .cv-tag-grup {
-    display: flex;                   /* [REQ: FLEX] tag mengalir dan turun sendiri */
+    display: flex;                   
     flex-wrap: wrap;
 }
 
@@ -618,7 +600,7 @@ button:focus {
 
 
 /* ==========================================================
-   12. FITUR TAMBAHAN — Mode gelap
+   12. FITUR TAMBAHAN — dark mode
    JavaScript menambah/menghapus class "gelap" pada <body>,
    lalu aturan di bawah menimpa warna-warna sebelumnya.
    ========================================================== */
@@ -691,9 +673,7 @@ body.gelap .tombol-tema      { background-color: #26313f; color: #e8eef6; border
 body.gelap .kutipan          { background-color: #0d141d; }
 
 
-/* ==========================================================
-   13. [REQ: RESPONSIVE] — tablet lalu HP
-   ========================================================== */
+/* tablet dan HP */
 
 /* Tablet: kolom ganda jadi satu kolom */
 @media (max-width: 900px) {
@@ -733,7 +713,7 @@ body.gelap .kutipan          { background-color: #0d141d; }
     }
 
     .navbar-isi {
-        flex-direction: column;       /* [REQ: FLEX] sumbu utama berubah jadi vertikal */
+        flex-direction: column;       
         align-items: flex-start;
         padding: 12px 18px;
     }
